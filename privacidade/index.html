@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Política de Privacidade – Quintal Apps</title>
+    <meta name="description" content="Política de Privacidade única dos aplicativos da Quintal Apps: o que fica no aparelho, anúncios, Firebase, permissões e seus direitos pela LGPD." />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --bg: #fafaf8;
+        --fg: #1c1b19;
+        --muted: #5a5852;
+        --line: #e4e2dc;
+        --card: #f2f1ec;
+        --accent: #a8390c;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121211;
+          --fg: #ecebe7;
+          --muted: #a9a69e;
+          --line: #2c2b28;
+          --card: #1b1b19;
+          --accent: #f0a47a;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+      }
+      .wrap { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1.25rem 4rem; }
+      nav.topo { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.5rem 0 1.5rem; font-size: 0.95rem; }
+      a { color: var(--accent); text-underline-offset: 0.15em; }
+      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+      h1 { font-size: clamp(1.7rem, 5vw, 2.2rem); line-height: 1.2; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
+      h2 { font-size: 1.3rem; margin: 2.5rem 0 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); line-height: 1.3; }
+      h3 { font-size: 1.05rem; margin: 1.75rem 0 0.25rem; scroll-margin-top: 1rem; }
+      p, ul, ol, dl { margin: 0.6rem 0; }
+      ul, ol { padding-left: 1.4rem; }
+      li { margin: 0.3rem 0; }
+      .meta { color: var(--muted); margin: 0 0 1.5rem; }
+      .resumo { background: var(--card); border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.25rem 1.1rem; margin: 1.5rem 0; }
+      .app { background: var(--card); border: 1px solid var(--line); border-radius: 0.75rem; padding: 0.25rem 1.1rem 0.9rem; margin: 1rem 0; scroll-margin-top: 1rem; }
+      .app:target { border-color: var(--accent); }
+      .app h3 { margin-top: 0.9rem; }
+      .pkg { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9rem; color: var(--muted); overflow-wrap: anywhere; }
+      .contato { font-weight: 600; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin: 0.75rem 0; }
+      th, td { text-align: left; vertical-align: top; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--line); }
+      th { color: var(--muted); font-weight: 600; }
+      .rolagem { overflow-x: auto; }
+      footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="topo" aria-label="Navegação">
+        <a href="../">Início</a>
+        <a href="../termos/">Termos de Uso</a>
+      </nav>
+
+      <main>
+        <h1>Política de Privacidade</h1>
+        <p class="meta"><strong>Em vigor desde:</strong> 23 de novembro de 2026</p>
+
+        <p>
+          Esta política vale para todos os aplicativos publicados pela <strong>Quintal Apps</strong> ("nós"),
+          listados na seção 2. Os apps funcionam sem internet e sem cadastro, e esta página explica, em
+          linguagem simples, o que eles guardam, o que sai do seu aparelho e quais são os seus direitos.
+        </p>
+
+        <div class="resumo">
+          <p><strong>Em resumo</strong></p>
+          <ul>
+            <li>Não há conta, login nem servidor nosso: o que você digita e salva fica só no seu aparelho.</li>
+            <li>Os apps mostram anúncios do Google AdMob, com mensagem de consentimento nas regiões em que a lei exige.</li>
+            <li>Usamos o Firebase (Google) para estatísticas de uso e relatórios de falha, sem nome, e-mail nem o que você digita. Você pode desligar nas Configurações.</li>
+            <li>Os apps são para maiores de 13 anos.</li>
+          </ul>
+        </div>
+
+        <h2 id="quem-somos">1. Quem somos</h2>
+        <p>
+          Os aplicativos são desenvolvidos e publicados pela <strong>Quintal Apps</strong>, um estúdio
+          brasileiro de apps simples para Android. A Quintal Apps é a responsável pelas decisões sobre o
+          tratamento de dados descrito aqui (controladora, nos termos da LGPD). Contato para qualquer
+          assunto desta política: <!-- CONTATO --><span class="contato">e-mail de contato (em breve)</span>.
+        </p>
+
+        <h2 id="apps">2. Apps cobertos por esta política</h2>
+        <div class="rolagem">
+          <table>
+            <thead>
+              <tr><th scope="col">Nome na loja</th><th scope="col">Pacote</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a href="#brasa-certa">Brasa Certa: Churrasco</a></td><td class="pkg">com.quintalapps.brasacerta</td></tr>
+              <tr><td><a href="#quiz-da-palavra">Quiz da Palavra: Bíblia</a></td><td class="pkg">com.quintalapps.quizdapalavra</td></tr>
+              <tr><td><a href="#medidinha">Medidinha: Conversor Receitas</a></td><td class="pkg">com.quintalapps.medidinha</td></tr>
+              <tr><td><a href="#rota-brasil">Rota Brasil: Quiz Geografia</a></td><td class="pkg">com.quintalapps.rotabrasil</td></tr>
+              <tr><td><a href="#ja-dizia-a-vo">Já Dizia a Vó: Ditados</a></td><td class="pkg">com.quintalapps.jadiziaavo</td></tr>
+              <tr><td><a href="#contadia">Contadia: Datas e Prazos</a></td><td class="pkg">com.quintalapps.contadia</td></tr>
+              <tr><td><a href="#obra-exata">Obra Exata: Calculadora</a></td><td class="pkg">com.quintalapps.obraexata</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Novos apps da Quintal Apps passam a seguir esta política quando forem acrescentados à lista.</p>
+
+        <h2 id="no-aparelho">3. O que cada app guarda no aparelho</h2>
+        <p>
+          Os apps funcionam sem internet e sem cadastro. Tudo o que está listado abaixo fica
+          <strong>apenas no seu aparelho</strong>, em armazenamento do próprio app. Não enviamos esses dados
+          para nenhum servidor nosso e não temos acesso a eles. Eles não são dados sensíveis, mas não coloque
+          informações pessoais em campos de texto livre, como nomes de receitas, de eventos ou de cômodos.
+        </p>
+
+        <section class="app" id="brasa-certa">
+          <h3>Brasa Certa: Churrasco</h3>
+          <p class="pkg">com.quintalapps.brasacerta</p>
+          <ul>
+            <li>As quantidades que você informa e o histórico dos últimos cálculos.</li>
+            <li>Os itens do cardápio que você marcou e os preços que você ajustou.</li>
+            <li>Preferências, como o tema claro ou escuro.</li>
+          </ul>
+          <p>Ao compartilhar a lista, o texto vai para o aplicativo que você escolher no menu do Android; nós não o recebemos.</p>
+        </section>
+
+        <section class="app" id="quiz-da-palavra">
+          <h3>Quiz da Palavra: Bíblia</h3>
+          <p class="pkg">com.quintalapps.quizdapalavra</p>
+          <ul>
+            <li>Suas pontuações, seus recordes, a sequência de dias jogados e as perguntas vistas recentemente (para não repetir logo).</li>
+            <li>Preferências: tema, sons, vibração e lembrete diário (ver seção 7).</li>
+          </ul>
+          <p>As perguntas citam apenas referências bíblicas (livro, capítulo e versículo); as explicações são escritas com palavras próprias.</p>
+        </section>
+
+        <section class="app" id="medidinha">
+          <h3>Medidinha: Conversor Receitas</h3>
+          <p class="pkg">com.quintalapps.medidinha</p>
+          <ul>
+            <li>O tamanho de xícara que você escolhe.</li>
+            <li>O rascunho da receita em edição e até 20 receitas salvas (nome, porções, ingredientes e quantidades que você digita).</li>
+            <li>Os 5 ingredientes usados mais recentemente e o tema.</li>
+          </ul>
+          <p>Ao compartilhar uma receita, o texto vai para o aplicativo que você escolher; o app não envia nada por conta própria.</p>
+        </section>
+
+        <section class="app" id="rota-brasil">
+          <h3>Rota Brasil: Quiz Geografia</h3>
+          <p class="pkg">com.quintalapps.rotabrasil</p>
+          <ul>
+            <li>Seus recordes, a sequência de dias jogados e as perguntas vistas recentemente (para não repetir logo).</li>
+            <li>Preferências: tema, sons, vibração e lembrete diário (ver seção 7).</li>
+          </ul>
+          <p>As perguntas se baseiam em fontes públicas oficiais, como o IBGE e a ANA, citadas na tela de cada resposta.</p>
+        </section>
+
+        <section class="app" id="ja-dizia-a-vo">
+          <h3>Já Dizia a Vó: Ditados</h3>
+          <p class="pkg">com.quintalapps.jadiziaavo</p>
+          <ul>
+            <li>Seus recordes, a sequência de dias jogados e as perguntas vistas recentemente (para não repetir logo).</li>
+            <li>Preferências: tema, sons, vibração e lembrete diário (ver seção 7).</li>
+          </ul>
+          <p>Os ditados e as explicações se baseiam em dicionários e em coletâneas antigas de domínio público, citadas na tela de cada resposta.</p>
+        </section>
+
+        <section class="app" id="contadia">
+          <h3>Contadia: Datas e Prazos</h3>
+          <p class="pkg">com.quintalapps.contadia</p>
+          <ul>
+            <li>As datas que você escolhe nos cálculos e o histórico dos últimos cálculos, que pode incluir uma data de nascimento, se você usar a ferramenta de idade.</li>
+            <li>As contagens regressivas que você salva (nome do evento e data) e os feriados próprios que você cadastra (nome e data).</li>
+            <li>Preferências: tema e opções dos dias úteis.</li>
+          </ul>
+          <p>Você pode apagar o histórico e as contagens salvas nas configurações do app. O seletor de datas é o do próprio Android e não pede permissão. Os feriados nacionais seguem as leis citadas na tela de feriados.</p>
+        </section>
+
+        <section class="app" id="obra-exata">
+          <h3>Obra Exata: Calculadora</h3>
+          <p class="pkg">com.quintalapps.obraexata</p>
+          <ul>
+            <li>Os cômodos que você cria (nome e medidas) e os cálculos que você adiciona à lista da obra.</li>
+            <li>Preferências: tema, perdas e tinta padrão.</li>
+          </ul>
+          <p>Você pode apagar a lista da obra e todos os cômodos nas configurações do app. Ao compartilhar um resultado ou a lista, o texto vai para o aplicativo que você escolher; nós não o recebemos.</p>
+        </section>
+
+        <h3>Backup do Android e como apagar</h3>
+        <p>
+          O backup automático do Android, se estiver ligado no seu aparelho, pode copiar os dados salvos pelos
+          apps para a sua conta Google, sob as regras do próprio Android. Para apagar tudo o que um app guarda
+          no aparelho, desinstale o app ou use <em>Configurações do Android → Apps → (o app) → Armazenamento →
+          Limpar dados</em>.
+        </p>
+
+        <h2 id="anuncios">4. Anúncios (Google AdMob)</h2>
+        <p>
+          Os apps são gratuitos e mostram anúncios do <strong>Google AdMob</strong>: banner no rodapé,
+          anúncios em tela cheia em pausas naturais (como ao terminar uma rodada ou depois de compartilhar)
+          e, só nos três quizzes, vídeo opcional em troca de uma ajuda e anúncio ao abrir o app. Para exibir
+          e medir anúncios e prevenir fraudes, o Google pode coletar e usar, no seu aparelho, o <strong>ID de
+          publicidade</strong>, o endereço IP, informações do aparelho e do app e dados de interação com os
+          anúncios. Os anúncios podem ser personalizados ou não, conforme a sua escolha.
+        </p>
+        <p>
+          Os apps declaram o uso do ID de publicidade do Android (permissão <code>AD_ID</code>). Você pode
+          redefini-lo ou limitar a personalização nas configurações do Android (<em>Google → Anúncios</em>).
+          Saiba mais em
+          <a href="https://policies.google.com/technologies/partner-sites">como o Google usa dados de apps parceiros</a>
+          e na <a href="https://policies.google.com/privacy">Política de Privacidade do Google</a>.
+        </p>
+
+        <h2 id="consentimento">5. Consentimento</h2>
+        <p>
+          Nas regiões em que a lei exige (como o Espaço Econômico Europeu, o Reino Unido e a Suíça), o app mostra uma mensagem de consentimento (Google UMP) <strong>antes</strong> de carregar
+          anúncios e antes de qualquer envio de dados de uso e de erros. Você pode rever a escolha a qualquer
+          momento em <em>Configurações → Preferências de privacidade e anúncios</em>, quando disponível.
+        </p>
+
+        <h2 id="firebase">6. Dados de uso e erros (Firebase)</h2>
+        <p>
+          Os apps usam o <strong>Firebase</strong>, um serviço do Google, para entender como são usados e
+          para corrigir travamentos. São três partes: o Firebase Analytics (estatísticas de uso), o Firebase
+          Crashlytics (relatórios de falha) e o Firebase Remote Config (configurações de funcionamento). Nada
+          disso exige que você se identifique.
+        </p>
+
+        <h3>O que é enviado</h3>
+        <ul>
+          <li>
+            <strong>Eventos de uso</strong>, de uma lista fechada: por exemplo, qual tela foi aberta, qual
+            ferramenta ou modo foi usado e se foi concluído, resultados em faixas (como "de 4 a 6 acertos" ou
+            "de 6 a 10 pessoas"), se você tocou em compartilhar, se usou uma ajuda com anúncio premiado e se
+            mudou uma configuração. Nenhum evento leva o que você digita ou escolhe: nomes, datas, medidas,
+            quantidades exatas, receitas, listas, perguntas ou respostas.
+          </li>
+          <li>
+            <strong>Eventos automáticos</strong> do Firebase e do SDK de anúncios do Google, que não passam
+            pela lista acima: por exemplo, a primeira abertura, o tempo de uso do app e as contagens de
+            pedidos, exibições e recompensas de anúncio. Seguem a mesma regra: só são enviados com o seu
+            consentimento e com o envio de dados de uso ligado, e não levam o que você digita.
+          </li>
+          <li>
+            <strong>Relatórios de falha</strong>, quando o app trava: o tipo do erro, o ponto do código onde
+            aconteceu e dados técnicos do aparelho, como modelo, versão do Android, versão do app e idioma. O
+            app é feito para não colocar nada do que você digita nesses relatórios, e a mensagem do erro não é
+            enviada.
+          </li>
+          <li>
+            Um <strong>identificador de instalação</strong>, gerado pelo Firebase. Ele não é o seu nome nem o
+            seu e-mail e muda se você desinstalar e instalar o app de novo.
+          </li>
+          <li>
+            O <strong>endereço IP</strong> da sua conexão, que chega aos servidores do Google como em qualquer
+            acesso à internet. Segundo o Google, o Analytics não registra nem guarda endereços IP.
+          </li>
+        </ul>
+        <p>
+          O identificador de instalação e o endereço IP são <strong>dados pessoais</strong> (LGPD), mesmo sem
+          ligar a você pelo nome. Por isso explicamos aqui como são usados.
+        </p>
+
+        <h3>O que não é enviado</h3>
+        <p>
+          Nome, e-mail, telefone, contatos, fotos, localização exata e qualquer dado que você digita nos
+          apps. O Analytics não está ligado à publicidade do Google: os recursos de publicidade do Analytics
+          ficam sempre desligados, o ID de publicidade não é usado por ele e não usamos esses dados para fazer
+          propaganda nem para montar perfis. Os anúncios (seção 4) funcionam separados disso.
+        </p>
+
+        <h3>Para que serve e base legal</h3>
+        <p>
+          Saber quais partes dos apps são úteis, achar e corrigir travamentos e melhorar as próximas versões.
+          A base legal é o nosso <strong>legítimo interesse</strong> em manter e melhorar os apps (LGPD, art.
+          7º, inciso IX), com coleta mínima e com a sua possibilidade de recusar a qualquer momento. Nas
+          regiões em que o consentimento é exigido, o envio só acontece depois dele.
+        </p>
+
+        <h3>Configurações remotas (Remote Config)</h3>
+        <p>
+          Com o envio de dados de uso e erros ligado, o app pode buscar no Firebase configurações de
+          funcionamento, como a frequência dos anúncios. Essa busca usa o mesmo identificador de instalação e
+          não leva nenhum dado seu. Se você desligar o envio, ou recusar em <em>Preferências de privacidade e
+          anúncios</em>, o app não faz essa busca e usa as configurações que já tem.
+        </p>
+
+        <h3>Por quanto tempo ficam</h3>
+        <ul>
+          <li>Eventos de uso (Analytics): <strong>2 meses</strong>, o menor prazo que o Firebase permite.</li>
+          <li>Relatórios de falha (Crashlytics): <strong>90 dias</strong>, prazo fixo definido pelo Firebase.</li>
+          <li>
+            Identificador de instalação (Firebase): fica no Firebase até ser apagado e deixa de ser usado se
+            você desinstalar o app.
+          </li>
+          <li>
+            Dados de anúncios (AdMob): seguem os prazos e as regras do Google, descritos na política do
+            Google linkada na seção 4.
+          </li>
+        </ul>
+        <p>
+          O Google pode levar mais algum tempo para remover os dados dos sistemas de backup. Os prazos do
+          Firebase seguem a página
+          <a href="https://firebase.google.com/support/privacy">Privacidade e segurança no Firebase</a>.
+        </p>
+
+        <h3>Como desligar</h3>
+        <p>
+          Abra o app, vá em <em>Configurações</em> e desative <em>Enviar dados de uso e erros</em>. O envio de
+          eventos e de relatórios de falha para na hora, e você pode ligar de novo quando quiser. Fora das
+          regiões em que o consentimento é exigido, esse envio vem ligado por padrão. Nas regiões em que é
+          exigido, o app pede a sua escolha ao abrir; se você recusar, o envio fica desligado, e você pode
+          mudar a escolha em <em>Configurações → Preferências de privacidade e anúncios</em>.
+        </p>
+        <p>
+          Desligar impede novos envios e apaga os relatórios de falha que ainda não tinham sido enviados. Os
+          dados que já foram enviados ficam no Firebase pelos prazos acima.
+        </p>
+
+        <h2 id="permissoes">7. Permissões do Android e notificações</h2>
+        <p>
+          Os apps não pedem acesso à câmera, ao microfone, à localização, aos contatos, às fotos nem aos
+          arquivos. Usam apenas permissões técnicas, como acesso à internet (para anúncios e Firebase),
+          vibração e ajuste do volume de efeitos sonoros, e o ID de publicidade (seção 4).
+        </p>
+        <p>
+          <strong>Notificações:</strong> só os três quizzes (Quiz da Palavra, Rota Brasil e Já Dizia a Vó) têm
+          lembrete diário. Se você ativar o lembrete, o app pede permissão para enviar notificações e agenda
+          um aviso local, gerado pelo próprio aparelho no horário que você escolher. Nenhum dado é enviado a
+          servidores para isso, e você pode desligar o lembrete nas configurações do app ou do Android.
+          Brasa Certa, Medidinha, Contadia e Obra Exata não enviam notificações.
+        </p>
+        <p>
+          Quando você toca em compartilhar, o app abre o menu de compartilhamento do Android e entrega o texto
+          ao aplicativo que você escolher. Os apps não enviam nada por conta própria.
+        </p>
+        <p>
+          Os apps não têm falas nem narração; só efeitos sonoros curtos, que você pode desligar.
+        </p>
+
+        <h2 id="criancas">8. Crianças e adolescentes</h2>
+        <p>
+          Os apps não são direcionados a crianças e são destinados a maiores de 13 anos. Se você é
+          responsável por uma criança menor de 13 anos que usa algum app, fale com a gente pelo contato abaixo.
+        </p>
+
+        <h2 id="direitos">9. Seus direitos (LGPD)</h2>
+        <p>
+          Pela Lei Geral de Proteção de Dados (Lei nº 13.709/2018, art. 18), você pode pedir: confirmação de
+          que tratamos dados seus, acesso, correção, anonimização, bloqueio ou eliminação de dados
+          desnecessários, informação sobre com quem os dados são compartilhados, e a revogação do
+          consentimento. Também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).
+        </p>
+        <p>
+          Como exercer: escreva para o contato no fim desta página. Como os apps não têm conta nem cadastro,
+          não conseguimos identificar você sozinhos; informe o app, o modelo do aparelho e a data aproximada
+          de uso, para localizarmos os dados técnicos do Firebase ligados à sua instalação. Respondemos no
+          prazo previsto em lei. Os dados guardados só no seu aparelho você mesmo controla e apaga (seção 3).
+          Os dados de anúncios são tratados pelo Google, e os pedidos sobre eles podem ser feitos também na
+          sua conta Google.
+        </p>
+
+        <h2 id="seguranca">10. Segurança e compartilhamento</h2>
+        <p>
+          Como não temos servidor nem conta, não guardamos dados seus. O que sai do aparelho vai para o Google
+          (AdMob e Firebase) por conexão segura (HTTPS), e não vendemos dados. Não compartilhamos dados com
+          outras empresas além dos prestadores do Google descritos acima.
+        </p>
+
+        <h2 id="mudancas">11. Mudanças nesta política</h2>
+        <p>
+          Podemos atualizar esta página, por exemplo quando um app novo entrar na lista ou mudar o que coleta.
+          A data no topo indica a última revisão; mudanças relevantes também aparecerão na ficha da loja.
+        </p>
+
+        <h2 id="contato">12. Contato</h2>
+        <p>
+          Dúvidas e pedidos sobre privacidade: <!-- CONTATO --><span class="contato">e-mail de contato (em breve)</span>.
+        </p>
+
+        <footer>
+          <a href="../termos/">Termos de Uso</a> · <a href="../">Quintal Apps</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

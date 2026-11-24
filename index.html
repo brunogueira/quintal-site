@@ -410,56 +410,6 @@
         }
       }
 
-      /* No canteiro */
-      .ideias {
-        margin-top: clamp(2rem, 5vw, 3rem);
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
-        gap: 1rem;
-      }
-      .ideia {
-        border: 1px solid var(--hair);
-        border-radius: 18px;
-        padding: 1.5rem;
-        display: grid;
-        grid-template-columns: 48px minmax(0, 1fr);
-        gap: 0.25rem 1rem;
-        align-content: start;
-      }
-      .ideia .inicial {
-        grid-row: span 3;
-        width: 48px;
-        height: 48px;
-        border-radius: 13px;
-        border: 1.5px dashed var(--control);
-        display: grid;
-        place-items: center;
-        font-weight: 600;
-        font-size: 1.125rem;
-        color: var(--muted);
-      }
-      .ideia .cat {
-        font-size: 0.8125rem;
-        color: var(--muted);
-        letter-spacing: 0.01em;
-      }
-      .ideia h3 {
-        font-size: 1.0625rem;
-        font-weight: 650;
-        letter-spacing: -0.015em;
-        line-height: 1.3;
-      }
-      .ideia p {
-        color: var(--muted);
-        font-size: 0.9375rem;
-        line-height: 1.45;
-      }
-      .aviso {
-        margin-top: 1.5rem;
-        font-size: 0.875rem;
-        color: var(--muted);
-      }
-
       /* Como fazemos */
       .pontos {
         margin-top: clamp(2rem, 5vw, 3rem);
@@ -600,7 +550,6 @@
           <a href="#obra">Obra e reforma</a>
           <a href="#datas">Datas e prazos</a>
           <a href="#quizzes">Quizzes</a>
-          <a href="#canteiro">No canteiro</a>
         </nav>
       </div>
     </header>
@@ -616,7 +565,6 @@
           <dl class="numeros">
             <div><dt>apps prontos</dt><dd>7</dd></div>
             <div><dt>categorias</dt><dd>4</dd></div>
-            <div><dt>ideias no canteiro</dt><dd>6</dd></div>
           </dl>
         </div>
       </section>
@@ -727,54 +675,6 @@
           </section>
         </div>
       </div>
-
-      <section class="bloco" id="canteiro" aria-labelledby="t-canteiro">
-        <div class="wrap">
-          <h2 class="titulo-secao" id="t-canteiro">No canteiro</h2>
-          <p class="desc-secao">
-            Ideias que estamos estudando. Ainda não têm data e podem mudar de nome, de forma ou nem sair do
-            papel.
-          </p>
-          <ul class="ideias">
-            <li class="ideia">
-              <span class="inicial" aria-hidden="true">R</span>
-              <span class="cat">Contas do dia a dia</span>
-              <h3>Racha Conta</h3>
-              <p>Divide a conta do bar ou do churrasco, com a taxa e quem bebeu.</p>
-            </li>
-            <li class="ideia">
-              <span class="inicial" aria-hidden="true">A</span>
-              <span class="cat">Contas do dia a dia</span>
-              <h3>Álcool ou Gasolina</h3>
-              <p>Diz qual compensa mais na hora de abastecer.</p>
-            </li>
-            <li class="ideia">
-              <span class="inicial" aria-hidden="true">P</span>
-              <span class="cat">Contas do dia a dia</span>
-              <h3>Preço Certo</h3>
-              <p>Compara o preço por quilo ou por litro no mercado.</p>
-            </li>
-            <li class="ideia">
-              <span class="inicial" aria-hidden="true">T</span>
-              <span class="cat">Obra e reforma</span>
-              <h3>Tinta na Medida</h3>
-              <p>Quantas latas comprar para pintar o cômodo.</p>
-            </li>
-            <li class="ideia">
-              <span class="inicial" aria-hidden="true">B</span>
-              <span class="cat">Quizzes</span>
-              <h3>Quiz da Bola</h3>
-              <p>Futebol brasileiro, das Copas aos clubes.</p>
-            </li>
-            <li class="ideia">
-              <span class="inicial" aria-hidden="true">C</span>
-              <span class="cat">Quizzes</span>
-              <h3>Quiz da Cozinha</h3>
-              <p>Pratos e ingredientes de todo o Brasil.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <section class="bloco" id="como" aria-labelledby="t-como">
         <div class="wrap">

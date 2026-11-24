@@ -81,8 +81,10 @@ section.bl{padding:clamp(64px,8vw,112px) 0}
 .fecho{text-align:center}.icones{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:34px}.icones img{border-radius:20px;box-shadow:0 14px 24px -14px var(--sombra);width:clamp(52px,9vw,72px);height:auto}
 .fecho .sub{margin-inline:auto}.fecho .acoes{justify-content:center;margin-top:28px}
 footer{border-top:1px solid var(--linha);padding:34px 0 44px;font-size:.96rem;color:var(--texto2)}footer .w{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;justify-content:space-between}footer nav{display:flex;flex-wrap:wrap;gap:4px 24px}footer nav a{min-height:44px;display:inline-flex;align-items:center;text-underline-offset:4px}footer .marca{color:var(--texto)}
+.quizzes.proximos{margin-top:18px}.quiz.sem-tela .quiz-texto{padding:28px 26px 24px}.quiz.sem-tela .app-topo img{width:64px;height:64px}
+.chip{align-self:flex-start;font-size:.78rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--linha);border-radius:99px;padding:4px 12px;margin-bottom:14px}
 @media(min-width:560px){.faixa ul{grid-template-columns:1fr 1fr}.trio{width:430px;height:500px}.trio .fone{--l:238px;margin-left:-119px}.solto{width:70px;height:70px;border-radius:20px}}
-@media(min-width:760px){header nav a{display:inline-flex}.bento{grid-template-columns:1fr 1fr}.larga{grid-column:1/-1;flex-direction:row;align-items:stretch}.larga .cartao-texto{flex:1.15;padding:46px 0 40px 46px;justify-content:center}.larga .cartao-fone{flex:1;align-items:flex-end;padding:46px 20px 0}.larga .fone{--l:270px}.quizzes{grid-template-columns:repeat(3,1fr)}.quiz-fone{padding-inline:14px}.quiz-fone .fone{--l:min(226px,100%)}}
+@media(min-width:760px){header nav a{display:inline-flex}.bento{grid-template-columns:1fr 1fr}.larga{grid-column:1/-1;flex-direction:row;align-items:stretch}.larga .cartao-texto{flex:1.15;padding:46px 0 40px 46px;justify-content:center}.larga .cartao-fone{flex:1;align-items:flex-end;padding:46px 20px 0}.larga .fone{--l:270px}.quizzes{grid-template-columns:repeat(3,1fr)}.quizzes.proximos{grid-template-columns:repeat(2,1fr)}.quiz-fone{padding-inline:14px}.quiz-fone .fone{--l:min(226px,100%)}}
 @media(min-width:960px){.hero .w{grid-template-columns:minmax(0,1fr) 520px;gap:30px}.trio{width:500px;height:560px}.trio .fone{--l:270px;margin-left:-135px}.faixa ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
 @media(prefers-reduced-motion:no-preference){.trio .fone,.solto{animation:sobe .8s cubic-bezier(.2,.7,.2,1) backwards}.trio .e{animation-delay:.1s}.trio .d{animation-delay:.18s}.s1{animation-delay:.35s}.s2{animation-delay:.42s}.s3{animation-delay:.5s}.s4{animation-delay:.58s}.cartao-fone .fone,.quiz-fone .fone{transition:translate .35s}.cartao:hover .fone,.quiz:hover .fone{translate:0 -8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -161,11 +163,21 @@ footer{border-top:1px solid var(--linha);padding:34px 0 44px;font-size:.96rem;co
               <p class="frase">Você sabe o final?</p><p class="desc">Complete o ditado, descubra o sentido e conheça a história por trás dele.</p><div class="app-fim"><span class="breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5v15l12.5-7.5z" fill="currentColor" stroke="none"/></svg>Em breve na Google Play</span><a href="privacidade/#ja-dizia-a-vo" aria-label="Política de privacidade do Já Dizia a Vó">Privacidade</a></div></div>
           </article>
         </div>
+        <div class="quizzes proximos">
+          <article class="quiz sem-tela" style="--c: #C2185B">
+            <div class="quiz-texto"><p class="chip">Em breve</p><div class="app-topo"><img src="assets/icones/pega-o-erro.png" alt="" width="64" height="64" loading="lazy" /><div><p class="rot">Quiz</p><h3>Pega o Erro</h3></div></div>
+              <p class="frase">Ache o erro de português.</p><p class="desc">Toque na palavra errada de cada frase e veja a regra por trás do erro, com a fonte.</p><div class="app-fim"><span class="breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5v15l12.5-7.5z" fill="currentColor" stroke="none"/></svg>Em breve na Google Play</span><a href="privacidade/#pega-o-erro" aria-label="Política de privacidade do Pega o Erro">Privacidade</a></div></div>
+          </article>
+          <article class="quiz sem-tela" style="--c: #00758F">
+            <div class="quiz-texto"><p class="chip">Em breve</p><div class="app-topo"><img src="assets/icones/qual-e-a-bandeira.png" alt="" width="64" height="64" loading="lazy" /><div><p class="rot">Quiz</p><h3>Qual é a Bandeira?</h3></div></div>
+              <p class="frase">Quantas bandeiras você conhece?</p><p class="desc">Da bandeira para o país, do país para a bandeira, por continente ou até o terceiro erro.</p><div class="app-fim"><span class="breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5v15l12.5-7.5z" fill="currentColor" stroke="none"/></svg>Em breve na Google Play</span><a href="privacidade/#qual-e-a-bandeira" aria-label="Política de privacidade do Qual é a Bandeira?">Privacidade</a></div></div>
+          </article>
+        </div>
       </div></section>
       <section class="bl fecho" aria-labelledby="t-fim"><div class="w">
-        <div class="icones" aria-hidden="true"><img src="assets/icones/brasa-certa.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/medidinha.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/contadia.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/obra-exata.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/quiz-da-palavra.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/rota-brasil.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="72" height="72" loading="lazy" /></div>
+        <div class="icones" aria-hidden="true"><img src="assets/icones/brasa-certa.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/medidinha.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/contadia.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/obra-exata.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/quiz-da-palavra.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/rota-brasil.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/pega-o-erro.png" alt="" width="72" height="72" loading="lazy" /><img src="assets/icones/qual-e-a-bandeira.png" alt="" width="72" height="72" loading="lazy" /></div>
         <h2 id="t-fim">Pequenos no tamanho.<br />Grandes no dia a dia.</h2>
-        <p class="sub">Sete apps prontos, a caminho da Google Play.</p>
+        <p class="sub">Nove apps a caminho da Google Play: sete prontos e dois em finalização.</p>
       </div></section>
     </main>
     <footer><div class="w">

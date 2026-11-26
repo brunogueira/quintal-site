@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="18" fill="#1f5b3f"/>
-  <path d="M32 50V31" fill="none" stroke="#f6f2ea" stroke-width="5" stroke-linecap="round"/>
-  <path d="M33 31c0-10 6-16 17-16 0 11-6 16-17 16z" fill="#ffb238"/>
-  <path d="M31 37c0-8-5-13-15-13 0 9 6 13 15 13z" fill="#f6f2ea"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><style>.c{fill:#15161A}.d{fill:#FF6A1F}@media (prefers-color-scheme:dark){.c{fill:#FFFFFF}}</style><rect x="4" y="1" width="2" height="2" rx="0.4" class="c"/><rect x="7" y="1" width="2" height="2" rx="0.4" class="c"/><rect x="10" y="1" width="2" height="2" rx="0.4" class="c"/><rect x="1" y="4" width="2" height="2" rx="0.4" class="c"/><rect x="13" y="4" width="2" height="2" rx="0.4" class="c"/><rect x="1" y="7" width="2" height="2" rx="0.4" class="c"/><rect x="7" y="7" width="2" height="2" rx="0.4" class="d"/><rect x="13" y="7" width="2" height="2" rx="0.4" class="c"/><rect x="1" y="10" width="2" height="2" rx="0.4" class="c"/><rect x="10" y="10" width="2" height="2" rx="0.4" class="d"/><rect x="4" y="13" width="2" height="2" rx="0.4" class="c"/><rect x="7" y="13" width="2" height="2" rx="0.4" class="c"/><rect x="13" y="13" width="2" height="2" rx="0.4" class="d"/></svg>

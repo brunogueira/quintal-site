@@ -3,17 +3,27 @@
 (function () {
   var r = document.documentElement;
   r.classList.add('js');
+  // Cor da barra do navegador acompanha o tema escolhido (as metas vêm antes deste script no <head>).
+  function pintaBarra(tema) {
+    var barras = document.querySelectorAll('meta[name="theme-color"]');
+    for (var i = 0; i < barras.length; i++) barras[i].content = tema === 'dark' ? '#000000' : '#f5f5f7';
+  }
   try {
     var t = localStorage.getItem('tema');
-    if (t === 'light' || t === 'dark') r.dataset.theme = t;
+    if (t === 'light' || t === 'dark') { r.dataset.theme = t; pintaBarra(t); }
   } catch (e) {}
 
   document.addEventListener('DOMContentLoaded', function () {
     var botao = document.querySelector('.tema');
     if (botao) botao.addEventListener('click', function () {
       var escuro = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-      r.dataset.theme = escuro ? 'light' : 'dark';
-      try { localStorage.setItem('tema', r.dataset.theme); } catch (e) {}
+      function troca() {
+        r.dataset.theme = escuro ? 'light' : 'dark';
+        try { localStorage.setItem('tema', r.dataset.theme); } catch (e) {}
+        pintaBarra(r.dataset.theme);
+      }
+      // Troca em crossfade, como na página inicial, para o brilho não mudar de uma vez.
+      if (document.startViewTransition) document.startViewTransition(troca); else troca();
     });
 
     // Sumário montado com os próprios títulos da página: nada a manter à mão.

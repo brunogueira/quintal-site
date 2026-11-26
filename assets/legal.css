@@ -1,76 +1,82 @@
-/* Privacidade, termos e pontes. A paleta é a mesma do index.html: mudou lá, mude aqui. */
-:root{color-scheme:light;--bg:#f6f2ea;--cartao:#fffdf8;--forte:#ece6da;--texto:#1c2a22;--texto2:#555b50;--verde:#1f5b3f;--no-verde:#fffdf8;--linha:rgba(28,42,34,.14);--larg:min(1140px,100% - 40px);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",system-ui,"Segoe UI",Roboto,sans-serif}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#14160f;--cartao:#1d2018;--forte:#282c21;--texto:#f2eee3;--texto2:#b9b5a5;--verde:#8fd0a9;--no-verde:#10180f;--linha:rgba(242,238,227,.15)}}
-:root[data-theme=dark]{color-scheme:dark;--bg:#14160f;--cartao:#1d2018;--forte:#282c21;--texto:#f2eee3;--texto2:#b9b5a5;--verde:#8fd0a9;--no-verde:#10180f;--linha:rgba(242,238,227,.15)}
+/* Privacidade, termos e pontes. Mesmo visual da página inicial (index.html): tokens, fonte e cabeçalho vêm de lá; mudou lá, mude aqui. */
+:root{color-scheme:light;--bg:#f5f5f7;--cartao:#fff;--forte:#e8e8ed;--texto:#1d1d1f;--texto2:#66666b;--tinta:#15161A;--laranja:#E8590C;--linha:rgba(0,0,0,.1);--vidro:rgba(245,245,247,.78);--tint:7%;
+  --ease-out:cubic-bezier(.23,1,.32,1);--larg:min(1120px,100% - 32px);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#000;--cartao:#161617;--forte:#2a2a2d;--texto:#f5f5f7;--texto2:#a1a1a6;--tinta:#f5f5f7;--laranja:#FF6A1F;--linha:rgba(255,255,255,.12);--vidro:rgba(0,0,0,.72);--tint:12%}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#000;--cartao:#161617;--forte:#2a2a2d;--texto:#f5f5f7;--texto2:#a1a1a6;--tinta:#f5f5f7;--laranja:#FF6A1F;--linha:rgba(255,255,255,.12);--vidro:rgba(0,0,0,.72);--tint:12%}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--texto);font-size:1.0625rem;line-height:1.65;overflow-x:clip}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--verde);outline-offset:3px;border-radius:8px}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;background:var(--bg);color:var(--texto);font-size:1.0625rem;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px}
+a,button{touch-action:manipulation}button{-webkit-user-select:none;user-select:none}
+::selection{background:color-mix(in srgb,var(--laranja) 26%,transparent)}
+:focus-visible{outline:2px solid var(--tinta);outline-offset:3px;border-radius:8px}
 main:focus{outline:none}
-.pular{position:absolute;left:16px;top:-80px;background:var(--verde);color:var(--no-verde);padding:12px 18px;border-radius:12px;z-index:50}
+.pular{position:absolute;left:16px;top:-80px;background:var(--texto);color:var(--bg);padding:12px 18px;border-radius:12px;z-index:50}
 .pular:focus{top:12px}
 .w{width:var(--larg);margin-inline:auto}
 
-/* Cabeçalho e rodapé */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--linha)}
-header .w{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:12px}
-.marca{display:inline-flex;align-items:center;gap:11px;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;min-height:44px;color:var(--texto)}
-.marca svg{width:34px;height:34px;flex:none}
-header nav{display:flex;align-items:center;gap:4px}
-header nav a{display:none;padding:10px 14px;min-height:44px;align-items:center;text-decoration:none;font-weight:600;font-size:.97rem;border-radius:12px}
-header nav a:hover{background:var(--forte)}
-.tema{width:44px;height:44px;border:1px solid var(--texto2);border-radius:50%;background:none;color:inherit;cursor:pointer;display:none;place-items:center;margin-left:6px;padding:0;flex:none}
-.tema svg{width:20px;height:20px}
+/* Cabeçalho e rodapé: vidro e linha fina, como na página inicial */
+header{position:sticky;top:0;z-index:20;background:var(--vidro);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--linha)}
+header .w{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:12px}
+.marca{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:1rem;text-decoration:none;min-height:44px;color:var(--texto)}
+.marca svg{width:26px;height:26px;flex:none}
+header nav{display:flex;align-items:center;gap:2px}
+header nav a{display:none;align-items:center;min-height:44px;padding:0 12px;font-size:.875rem;color:var(--texto2);text-decoration:none;transition:color .15s ease}
+.tema{width:44px;height:44px;border:0;border-radius:50%;background:none;color:var(--texto2);cursor:pointer;display:none;place-items:center;padding:0;flex:none;transition:transform .16s var(--ease-out),color .15s ease}
+.tema:active{transform:scale(.97)}
+.tema svg{width:19px;height:19px}
 .js .tema{display:grid}
-footer{margin-top:auto;border-top:1px solid var(--linha);padding:34px 0 44px;font-size:.96rem;color:var(--texto2)}
-footer .w{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;justify-content:space-between}
-footer nav{display:flex;flex-wrap:wrap;gap:4px 24px}
-footer nav a{min-height:44px;display:inline-flex;align-items:center;text-underline-offset:4px}
+footer{margin-top:auto;border-top:1px solid var(--linha);padding:24px 0 36px;font-size:.85rem;color:var(--texto2)}
+footer .w{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:0 20px}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+footer .marca{font-size:.95rem}
 
-/* Texto */
-.folha{padding-block:clamp(32px,6vw,72px) clamp(56px,8vw,96px)}
+/* Texto: medida de leitura de ~68 caracteres, títulos semibold e justos */
+.folha{padding-block:clamp(40px,7vw,88px) clamp(72px,9vw,128px)}
 main{max-width:43rem;min-width:0}
-h1,h2,h3{letter-spacing:-.025em;line-height:1.2;text-wrap:balance;font-weight:800}
-h1{font-size:clamp(2.2rem,1.4rem + 3.6vw,3.6rem);line-height:1.04;letter-spacing:-.035em;margin:0 0 14px}
-h2{letter-spacing:-.015em;word-spacing:.06em;font-size:clamp(1.4rem,1.2rem + .9vw,1.8rem);margin:56px 0 14px;padding-top:28px;border-top:1px solid var(--linha)}
-h3{font-size:1.18rem;margin:32px 0 6px;letter-spacing:-.015em}
+h1,h2,h3{font-weight:600;line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(2.4rem,1.4rem + 4vw,4rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 16px}
+h2{font-size:clamp(1.45rem,1.2rem + 1vw,1.9rem);letter-spacing:-.03em;margin:64px 0 14px;padding-top:28px;border-top:1px solid var(--linha)}
+h2:target{border-top:2px solid var(--laranja);padding-top:27px}
+h3{font-size:1.15rem;letter-spacing:-.015em;margin:32px 0 6px}
 p,ul{margin:14px 0}
 main p,main li{text-wrap:pretty;overflow-wrap:break-word}
 ul{padding-left:1.3rem}
 li{margin:7px 0}
-li::marker,h2:target{color:var(--verde)}
-main a{color:var(--verde);font-weight:600;text-underline-offset:4px}
-main a:hover{text-decoration-thickness:2px}
-.meta{color:var(--texto2);margin:0 0 28px}
-.meta strong{font-weight:650}
+li::marker{color:var(--laranja)}
+main a{color:var(--tinta);font-weight:500;text-decoration-thickness:1px}
+.meta{color:var(--texto2);margin:0 0 32px}
+.meta strong{font-weight:600}
 code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.9em;background:var(--forte);padding:.1em .4em;border-radius:6px}
-.resumo,.app,.sumario details{background:var(--cartao);border:1px solid var(--linha);border-radius:22px}
-.resumo{padding:10px 24px;margin:28px 0;background:color-mix(in srgb,var(--verde) 9%,var(--cartao))}
-.app{padding:24px 24px 12px;margin:16px 0}
-.app:target{border-color:var(--verde);box-shadow:0 0 0 2px var(--verde)}
+
+/* Blocos: cartões sem borda, como o bento da página inicial */
+.resumo,.app,.sumario details{background:var(--cartao);border-radius:24px}
+.resumo{padding:12px 28px;margin:32px 0;background:color-mix(in srgb,var(--laranja) var(--tint),var(--cartao))}
+.app{padding:26px 28px 14px;margin:16px 0}
+.app:target{box-shadow:0 0 0 2px var(--laranja)}
 .app h3{margin:0}
 .app .pkg{margin:2px 0 12px}
-.pkg{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.86rem;color:var(--texto2);overflow-wrap:anywhere}
-.contato{font-weight:650}
+.pkg{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.84rem;color:var(--texto2);overflow-wrap:anywhere}
+.contato{font-weight:600}
 .rolagem{overflow-x:auto;margin:20px 0}
 table{width:100%;border-collapse:collapse;font-size:1rem;line-height:1.35}
 th,td{text-align:left;vertical-align:middle;padding:4px 12px 4px 0;border-bottom:1px solid var(--linha)}
-th{color:var(--texto2);font-weight:650;font-size:.9rem;padding-block:10px}
+th{color:var(--texto2);font-weight:600;font-size:.88rem;padding-block:10px}
 td a{display:flex;align-items:center;min-height:44px}
-td.pkg{font-size:.82rem}
+td.pkg{font-size:.8rem}
 
-/* Sumário (montado pelo tema.js) */
+/* Sumário (montado pelo tema.js): cartão que abre e fecha no celular, coluna fixa no desktop */
 .sumario:empty{display:none}
 .sumario{margin-bottom:32px;max-width:43rem}
-.sumario summary{display:flex;align-items:center;justify-content:space-between;min-height:52px;padding:0 20px;font-weight:700;cursor:pointer;list-style:none}
+.sumario summary{display:flex;align-items:center;justify-content:space-between;min-height:52px;padding:0 22px;font-weight:600;cursor:pointer;list-style:none}
 .sumario summary::-webkit-details-marker{display:none}
-.sumario summary::after{content:"";width:9px;height:9px;border:solid currentColor;border-width:0 2px 2px 0;rotate:45deg;translate:0 -3px}
+.sumario summary::after{content:"";width:8px;height:8px;border:solid currentColor;border-width:0 1.8px 1.8px 0;rotate:45deg;translate:0 -3px;transition:rotate .2s var(--ease-out),translate .2s var(--ease-out)}
 .sumario [open] summary::after{rotate:225deg;translate:0 3px}
 .sumario nav{display:grid;padding:0 12px 12px}
-.sumario a{display:flex;align-items:center;min-height:44px;padding:8px;border-radius:12px;text-decoration:none;line-height:1.3;font-size:1rem}
+.sumario a{display:flex;align-items:center;min-height:44px;padding:8px 10px;border-radius:12px;text-decoration:none;line-height:1.3;font-size:1rem}
 .sumario :focus-visible{outline-offset:-3px}
-.sumario a:hover{background:var(--forte)}
 
 /* Pontes */
 .ponte main{margin-inline:auto}
@@ -79,11 +85,24 @@ td.pkg{font-size:.82rem}
 
 @media(min-width:620px){header nav a{display:inline-flex}}
 @media(min-width:1080px){
-.com-sumario{display:grid;grid-template-columns:270px minmax(0,43rem);gap:72px;align-items:start}
-.sumario{position:sticky;top:92px;margin:0;max-height:calc(100vh - 112px);overflow-y:auto}
-.sumario details{background:none;border:0}
-.sumario summary{padding:0 8px;min-height:44px;pointer-events:none}.sumario summary::after{display:none}
-.sumario nav{padding:0}.sumario a{font-size:.95rem;color:var(--texto2)}.sumario a:hover{color:var(--texto)}
+  .com-sumario{display:grid;grid-template-columns:240px minmax(0,43rem);gap:80px;align-items:start}
+  .sumario{position:sticky;top:88px;margin:0;max-height:calc(100vh - 112px);overflow-y:auto}
+  .sumario details{background:none}
+  .sumario summary{padding:0 10px;min-height:44px;pointer-events:none;font-size:.95rem}
+  .sumario summary::after{display:none}
+  .sumario nav{padding:0}
+  .sumario a{font-size:.9rem;color:var(--texto2)}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(hover:hover) and (pointer:fine){
+  header nav a:hover,.tema:hover{color:var(--texto)}
+  main a:hover{text-decoration-thickness:2px}
+  .sumario a:hover{background:var(--forte);color:var(--texto)}
+}
+@media(prefers-reduced-transparency:reduce){header{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media(prefers-contrast:more){
+  .resumo,.app,.sumario details{box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--texto) 45%,transparent)}
+  .meta,.pkg,th,footer,header nav a{color:var(--texto)}
+}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.3s;animation-timing-function:ease}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sumario summary::after{transition:none}}
 @media print{header,footer,.sumario,.pular{display:none}}

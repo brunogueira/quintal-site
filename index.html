@@ -37,27 +37,30 @@
       })();
     </script>
     <style>
-:root{color-scheme:light;--bg:#f5f5f7;--card:#fff;--texto:#1d1d1f;--texto2:#66666b;--linha:rgba(0,0,0,.08);--tinta:#15161A;--no-tinta:#fff;--link:#15161A;--laranja:#E8590C;--tint:10%;--vidro:rgba(245,245,247,.78);
-  --sombra:0 30px 60px -28px rgba(0,0,0,.3),0 0 0 1px rgba(0,0,0,.06);--painel:#15161A;--no-painel:#f5f5f7;
+:root{color-scheme:light;--bg:#f5f5f7;--card:#fff;--texto:#1d1d1f;--texto2:#66666b;--linha:rgba(0,0,0,.08);--tinta:#15161A;--no-tinta:#fff;--link:#15161A;--laranja:#E8590C;--tint:9%;--vidro:rgba(245,245,247,.78);
+  --sombra:0 30px 60px -28px rgba(0,0,0,.28),0 0 0 1px rgba(0,0,0,.06);--vitrine-fundo:#f4f4f6;--peca:#e9e9ee;--peca-brilho:#f8d8c3;--n14:linear-gradient(135deg,#15161A 35%,#FF6A1F);
   --ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1);--larg:min(1120px,100% - 32px);
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#000;--card:#161617;--texto:#f5f5f7;--texto2:#a1a1a6;--linha:rgba(255,255,255,.1);--tinta:#f5f5f7;--no-tinta:#15161A;--link:#f5f5f7;--laranja:#FF6A1F;--tint:18%;--vidro:rgba(0,0,0,.72);--sombra:0 30px 60px -28px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.1);--painel:#161617;--no-painel:#f5f5f7}}
-:root[data-theme=dark]{color-scheme:dark;--bg:#000;--card:#161617;--texto:#f5f5f7;--texto2:#a1a1a6;--linha:rgba(255,255,255,.1);--tinta:#f5f5f7;--no-tinta:#15161A;--link:#f5f5f7;--laranja:#FF6A1F;--tint:18%;--vidro:rgba(0,0,0,.72);--sombra:0 30px 60px -28px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.1);--painel:#161617;--no-painel:#f5f5f7}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#000;--card:#161617;--texto:#f5f5f7;--texto2:#a1a1a6;--linha:rgba(255,255,255,.1);--tinta:#f5f5f7;--no-tinta:#15161A;--link:#f5f5f7;--laranja:#FF6A1F;--tint:16%;--vidro:rgba(0,0,0,.72);
+  --sombra:0 30px 60px -28px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.1);--vitrine-fundo:#0b0b0c;--peca:#151517;--peca-brilho:#3a1b0b;--n14:linear-gradient(135deg,#f5f5f7 35%,#FF6A1F)}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#000;--card:#161617;--texto:#f5f5f7;--texto2:#a1a1a6;--linha:rgba(255,255,255,.1);--tinta:#f5f5f7;--no-tinta:#15161A;--link:#f5f5f7;--laranja:#FF6A1F;--tint:16%;--vidro:rgba(0,0,0,.72);
+  --sombra:0 30px 60px -28px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.1);--vitrine-fundo:#0b0b0c;--peca:#151517;--peca-brilho:#3a1b0b;--n14:linear-gradient(135deg,#f5f5f7 35%,#FF6A1F)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--texto);font-size:1.0625rem;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased}
 h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
 h1,h2,h3{font-weight:600;text-wrap:balance}p{text-wrap:pretty}
 a{color:inherit;text-underline-offset:3px}
-a,button{touch-action:manipulation}button{-webkit-user-select:none;user-select:none;font:inherit;color:inherit}
+a,button{touch-action:manipulation}button{-webkit-user-select:none;user-select:none}
 ::selection{background:color-mix(in srgb,var(--laranja) 26%,transparent)}
 :focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:8px}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .pular{position:absolute;left:16px;top:-80px;background:var(--texto);color:var(--bg);padding:12px 18px;border-radius:12px;z-index:50}.pular:focus{top:12px}
 .w{width:var(--larg);margin-inline:auto}
 svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.num{font-variant-numeric:tabular-nums}
 
-/* Cabeçalho */
+/* Cabeçalho: vidro e linha só depois que a página sai do topo (sem JS, sempre com vidro) */
 .sentinela{position:absolute;top:0;left:0;width:1px;height:16px;pointer-events:none}
 .topo{position:sticky;top:0;z-index:20;background:var(--vidro);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--linha);transition:background-color .2s ease,border-color .2s ease}
 .js .topo:not(.rolou){background-color:transparent;border-bottom-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
@@ -71,138 +74,168 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 
 /* Botões */
 .bt{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:99px;background:var(--tinta);color:var(--no-tinta);font-weight:500;text-decoration:none;transition:transform .16s var(--ease-out),background-color .15s ease}
-.bt-claro{background:var(--no-painel);color:var(--painel)}
-.bt:active,.tema:active,.seta:active,.aba:active{transform:scale(.97)}
+.bt:active,.tema:active{transform:scale(.97)}
 .lnk{display:inline-flex;align-items:center;gap:4px;min-height:48px;color:var(--link);font-weight:500;text-decoration:none}
 .lnk svg{width:14px;height:14px;stroke-width:2.2;transition:transform .16s var(--ease-out)}
-.seta{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--linha);background:var(--card);cursor:pointer;transition:transform .16s var(--ease-out),border-color .15s ease}
-.seta svg{width:18px;height:18px;stroke-width:2.2}
+.lnk:active{opacity:.7}
 
-/* Hero: título grande no centro e uma tela que você troca (abas com os ícones) */
-.hero{text-align:center;padding:clamp(48px,8vw,104px) 0 0}
+/* Hero */
+.hero{text-align:center;padding:clamp(56px,9vw,112px) 0 0}
 .eyebrow{display:flex;justify-content:center;color:var(--texto)}
 .eyebrow svg{display:block;height:clamp(15px,.75rem + .45vw,21px);width:auto;stroke:none}
-h1{font-size:clamp(3.2rem,1.2rem + 8vw,7.4rem);line-height:1;letter-spacing:-.045em;margin-top:14px}
-h1 em{font-style:normal;color:var(--laranja)}
-.lead{font-size:clamp(1.12rem,1rem + .55vw,1.45rem);line-height:1.38;color:var(--texto2);max-width:34ch;margin:22px auto 0;font-weight:500;letter-spacing:-.015em;text-wrap:balance}
-.acoes{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 28px;margin-top:30px}
-.vitrine{--r:clamp(28px,3.4vw,44px);position:relative;margin-top:clamp(44px,6vw,72px);border-radius:var(--r);background:radial-gradient(70% 90% at 50% 100%,color-mix(in srgb,var(--c) calc(var(--tint) * 2.2),var(--card)),color-mix(in srgb,var(--c) var(--tint),var(--bg)) 70%);padding:clamp(28px,4vw,52px) 16px 26px;transition:background .5s ease;overflow:hidden;overflow:clip}
-.palco{display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,56px)}
-.tela-grande{position:relative;width:clamp(210px,24vw,290px);aspect-ratio:520/900;border-radius:clamp(22px,2.6vw,32px);overflow:hidden;background:#fbf8f2;box-shadow:var(--sombra)}
-.tela-grande img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity .28s var(--ease-out),filter .28s var(--ease-out),transform .28s var(--ease-out);filter:blur(2px);transform:scale(.985)}
-.tela-grande img.on{opacity:1;filter:none;transform:none}
-.legenda{margin-top:22px;font-size:clamp(1rem,.95rem + .3vw,1.2rem);color:var(--texto2);font-weight:500;min-height:1.6em}
-.legenda .leg-app{color:var(--texto);font-weight:600}
-.abas{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:18px}
-.aba{display:flex;align-items:center;gap:8px;min-height:48px;padding:4px 14px 4px 5px;border-radius:99px;border:1px solid var(--linha);background:color-mix(in srgb,var(--card) 70%,transparent);cursor:pointer;font-size:.9rem;font-weight:500;color:var(--texto2);transition:transform .16s var(--ease-out),background-color .2s ease,border-color .2s ease,color .2s ease}
-.aba img{width:38px;height:38px;border-radius:22.5%;flex:none}
-.aba[aria-selected=true]{background:var(--card);color:var(--texto);border-color:color-mix(in srgb,var(--c) 55%,transparent);box-shadow:0 8px 20px -14px color-mix(in srgb,var(--c) 80%,transparent)}
+h1{font-size:clamp(3.2rem,1.2rem + 8vw,7.2rem);line-height:1;letter-spacing:-.045em;margin-top:10px}
+.lead{font-size:clamp(1.15rem,1rem + .6vw,1.5rem);line-height:1.35;color:var(--texto2);max-width:30ch;margin:22px auto 0;font-weight:500;letter-spacing:-.015em;text-wrap:balance}
+.acoes{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 28px;margin-top:32px}
+.vitrine{--r:clamp(24px,3vw,36px);position:relative;isolation:isolate;margin-top:clamp(48px,7vw,80px);border-radius:var(--r);overflow:hidden;overflow:clip;clip-path:inset(0 round var(--r));background:var(--vitrine-fundo);height:clamp(340px,40vw,500px)}
+/* Grade com as peças do Q (13 unidades: peça 11, vão 2, canto 2,4), mais quente atrás da tela central */
+.grade{--passo:clamp(18px,2vw,26px);position:absolute;inset:0 0 -60px;z-index:-1;background:radial-gradient(46% 60% at 50% 92%,var(--peca-brilho),transparent 72%),linear-gradient(var(--vitrine-fundo) 6%,var(--peca) 72%);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Crect x='1' y='1' width='11' height='11' rx='2.4'/%3E%3C/svg%3E") 50% 0/var(--passo) var(--passo);mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Crect x='1' y='1' width='11' height='11' rx='2.4'/%3E%3C/svg%3E") 50% 0/var(--passo) var(--passo)}
+/* Cinco telas em arco: a central maior e na frente. Todas passam da borda de baixo (o painel recorta) e somem num degradê, então nenhuma base aparece, nem quando o arco abre na rolagem. */
+.palco{position:absolute;inset:0;-webkit-mask-image:linear-gradient(#000 calc(100% - 80px),transparent);mask-image:linear-gradient(#000 calc(100% - 80px),transparent)}
+.palco .tela{position:absolute;left:50%;top:var(--topo);width:var(--w);margin-left:calc(var(--w) / -2 + var(--x));z-index:var(--z);min-height:calc(100% - var(--topo) + 64px);background:var(--tela-fundo,#fbf8f2)}
+.palco .tela img{aspect-ratio:auto;height:auto}
+.t0{--w:clamp(184px,20.5vw,256px);--x:0px;--topo:clamp(30px,4.2vw,52px);--z:3}
+.t1{--w:clamp(158px,18vw,228px);--topo:clamp(56px,8vw,104px);--z:2}
+.t2{--w:clamp(140px,15.5vw,196px);--topo:clamp(82px,11.5vw,150px);--z:1}
+.t1.e{--x:calc(clamp(150px,16.5vw,212px) * -1)}.t1.d{--x:clamp(150px,16.5vw,212px)}
+.t2.e{--x:calc(clamp(268px,29vw,386px) * -1)}.t2.d{--x:clamp(268px,29vw,386px)}
+.tela{flex:none;border-radius:clamp(18px,2.2vw,26px);overflow:hidden;background:#faf7f1;box-shadow:var(--sombra)}
+.tela img{display:block;width:100%;height:auto;aspect-ratio:520/943;object-fit:cover;object-position:top}
 
-/* Seções */
+/* Seções e bento */
 section.bl{padding-top:clamp(96px,12vw,160px)}
-.cab{max-width:760px;margin:0 auto clamp(36px,5vw,56px);text-align:center}
-.sobre{font-size:.95rem;font-weight:600;color:var(--laranja);margin-bottom:10px}
-.cab h2,.fatos-sec h2,.fecho h2{font-size:clamp(2.2rem,1.2rem + 3.4vw,3.9rem);line-height:1.04;letter-spacing:-.04em}
-.sub{color:var(--texto2);font-size:clamp(1.05rem,1rem + .3vw,1.25rem);margin-top:16px;font-weight:500}
-.t{color:var(--texto2);margin-top:10px;font-weight:500}
+.cab{text-align:center;max-width:760px;margin:0 auto clamp(36px,5vw,56px)}
+.cab h2,.fecho h2{font-size:clamp(2.2rem,1.2rem + 3.4vw,3.8rem);line-height:1.04;letter-spacing:-.04em}
+.cab p,.fecho p{color:var(--texto2);font-size:clamp(1.05rem,1rem + .3vw,1.25rem);margin-top:16px;font-weight:500}
+.bento{display:grid;gap:16px}
+.cx{--r:28px;position:relative;border-radius:var(--r);overflow:hidden;overflow:clip;clip-path:inset(0 round var(--r));background:var(--card);padding:32px 30px;display:flex;flex-direction:column}
+.cx.tinta{background:color-mix(in srgb,var(--c) var(--tint),var(--card))}
+.t{color:var(--texto2);margin-top:12px;max-width:42ch;font-weight:500}
 
-/* Fatos: título grande e seis itens com ícone numa roda */
-.fatos-sec h2{text-align:center}
-.fatos-sec h2 span{color:var(--texto2)}
-.fatos{display:grid;gap:40px 32px;margin-top:clamp(48px,6vw,80px);text-align:center}
-.fatos li{display:grid;justify-items:center;gap:8px}
-.ic-roda{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:color-mix(in srgb,var(--laranja) 12%,var(--card));color:var(--laranja);margin-bottom:6px}
-.ic-roda svg{width:26px;height:26px}
-.fatos h3{font-size:1.3rem;letter-spacing:-.02em}
-.fatos p{color:var(--texto2);max-width:30ch;font-weight:500}
+/* Fatos */
+.bento.fatos{grid-template-columns:1fr 1fr}
+.grande{grid-column:1/-1;justify-content:center}
+.grande .n{font-size:clamp(6rem,3rem + 10vw,11rem);font-weight:700;line-height:.85;letter-spacing:-.06em;background:var(--n14);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.04em}
+.grande h3{font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-.035em;margin-top:14px}
+.fato{min-height:200px;padding:24px 22px}
+.fato .ic{width:44px;height:44px;color:var(--laranja);margin-bottom:auto}
+.fato h3{font-size:clamp(1.3rem,1.15rem + .6vw,1.8rem);line-height:1.1;letter-spacing:-.03em;margin-top:28px}
+.fato .t{margin-top:6px}
 
-/* Calculadoras: linhas com a tela à esquerda e o texto à direita */
-.linhas{display:grid;gap:16px}
-.linha{display:grid;gap:0;border-radius:32px;background:var(--card);overflow:hidden;overflow:clip}
-.linha-img{background:color-mix(in srgb,var(--c) var(--tint),var(--card));display:flex;justify-content:center;align-items:flex-end;padding:36px 24px 0;min-height:300px}
-.linha-img .tela{width:min(240px,70%);border-radius:24px 24px 0 0;overflow:hidden;box-shadow:var(--sombra);background:#fbf8f2}
-.linha-img .tela img{display:block;width:100%;height:auto;aspect-ratio:520/620;object-fit:cover;object-position:top}
-.linha-texto{padding:clamp(26px,4vw,48px)}
-.app-topo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+/* Blocos de app */
+.app{padding-bottom:0}
+.app-topo{display:flex;align-items:center;gap:12px;margin-bottom:20px}
 .app-topo img{border-radius:22.5%;flex:none}
-.app-topo h3{font-size:1rem;letter-spacing:-.01em}
-.frase{font-size:clamp(1.7rem,1.2rem + 1.6vw,2.6rem);font-weight:600;line-height:1.06;letter-spacing:-.035em;text-wrap:balance}
-.lista{margin-top:18px;display:grid;gap:9px;font-weight:500}
+.app-topo h3{font-size:.95rem;letter-spacing:-.01em;line-height:1.25}
+.app-topo p{font-size:.84rem;color:var(--texto2);font-weight:500;line-height:1.3}
+.frase{font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);font-weight:600;line-height:1.08;letter-spacing:-.035em;text-wrap:balance}
+.lista{margin-top:16px;display:grid;gap:8px;font-weight:500;font-size:.98rem}
 .lista li{display:flex;gap:10px;align-items:center}
-.lista svg{width:18px;height:18px;color:var(--laranja);stroke-width:2.4;flex:none}
-.priv{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;font-size:.88rem;color:var(--link);font-weight:500}
+.lista svg{width:18px;height:18px;color:var(--texto);stroke-width:2.4;flex:none}
+.priv{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:.88rem;color:var(--link);font-weight:500;align-self:flex-start}
+.app .app-texto{margin-bottom:28px}
+.app .tela{width:min(260px,64%);margin:auto auto 0;border-radius:24px 24px 0 0}
+.app .tela img{aspect-ratio:520/600}
 
-/* Quizzes: cartões altos coloridos num trilho que rola de lado */
-.cab-linha{display:flex;align-items:end;justify-content:space-between;gap:24px;text-align:left;max-width:none}
-.cab-linha h2{max-width:18ch}
-.setas-trilho{display:none;gap:8px;flex:none}
-.trilho{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(250px,72vw,300px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(16px,(100% - 1120px) / 2);padding:4px max(16px,(100% - 1120px) / 2) 24px;scrollbar-width:none;overscroll-behavior-x:contain}
-.trilho::-webkit-scrollbar{display:none}
-.cartao{scroll-snap-align:start;display:flex;flex-direction:column;min-height:420px;border-radius:32px;padding:28px 26px 18px;color:#fff;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 88%,#fff),color-mix(in srgb,var(--c) 70%,#000))}
-.cartao img{border-radius:22.5%;box-shadow:0 14px 28px -14px rgba(0,0,0,.6);margin-bottom:auto}
-.cartao h3{font-size:1.6rem;letter-spacing:-.03em;margin-top:28px}
-.cartao .f{font-weight:600;margin-top:4px;opacity:.95}
-.cartao .t{color:rgba(255,255,255,.86);font-size:.95rem;font-weight:400}
-.cartao .priv{color:#fff;margin-top:6px;align-self:flex-start}
+/* Quizzes menores */
+.minis{display:grid;gap:16px;margin-top:16px}
+.mini{display:grid;grid-template-columns:48px 1fr;column-gap:16px;padding:22px 20px 12px}
+.mini img{grid-row:span 4;border-radius:22.5%}
+.mini h3{font-size:1.2rem;letter-spacing:-.02em;line-height:1.2}
+.mini .f{font-weight:600;margin-top:2px;line-height:1.3}
+.mini .t{margin-top:8px;font-size:.95rem;font-weight:400}
+.mini .priv{justify-self:start}
+.selo-fim{justify-content:center;align-items:center;text-align:center;background:var(--tinta);color:var(--no-tinta);min-height:180px}
+.selo-fim strong{font-size:2.4rem;font-weight:600;letter-spacing:-.04em;line-height:1}
+.selo-fim span{margin-top:8px;font-weight:500}
 
-/* Fecho: painel escuro com o chamado */
-.fecho{padding-bottom:clamp(96px,12vw,160px)}
-.painel-fim{border-radius:clamp(28px,3.4vw,44px);background:var(--painel);color:var(--no-painel);text-align:center;padding:clamp(48px,7vw,96px) 24px}
-.icones{display:grid;grid-template-columns:repeat(7,minmax(0,56px));justify-content:center;gap:clamp(8px,1.4vw,14px);margin:0 auto 40px}
+/* Fecho */
+.fecho{text-align:center;padding-bottom:clamp(96px,12vw,160px)}
+.icones{display:grid;grid-template-columns:repeat(7,minmax(0,64px));justify-content:center;gap:clamp(8px,1.6vw,16px);margin:0 auto 44px}
 .icones img{display:block;width:100%;height:auto;border-radius:22.5%}
-.painel-fim p{color:color-mix(in srgb,var(--no-painel) 70%,transparent);font-size:clamp(1.05rem,1rem + .3vw,1.25rem);margin-top:16px;font-weight:500}
-.painel-fim .acoes{margin-top:30px}
+.fecho .acoes{margin-top:28px}
 
 footer{border-top:1px solid var(--linha);padding:24px 0 36px;font-size:.85rem;color:var(--texto2)}
 footer .w{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center;justify-content:space-between}
 footer nav{display:flex;flex-wrap:wrap;gap:0 20px}footer nav a{min-height:44px;display:inline-flex;align-items:center}
 footer .marca{color:var(--texto);font-size:.95rem}
 
-@media(max-width:619px){.seta.ant,.seta.prox{display:none}.aba span{display:none}.aba{padding:4px}}
-@media(min-width:620px){.fatos{grid-template-columns:repeat(2,1fr)}.setas-trilho{display:flex}}
+@media(max-width:619px){.t2{display:none}}
+@media(min-width:620px){
+  .minis{grid-template-columns:1fr 1fr}
+  .mini{display:flex;flex-direction:column;padding:26px 24px 16px}
+  .mini img{margin-bottom:18px}
+  .mini .priv{margin-top:auto;padding-top:8px}
+}
 @media(min-width:820px){
   .topo nav a{display:inline-flex}
-  .fatos{grid-template-columns:repeat(3,1fr);gap:56px 40px}
-  .linha{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:stretch}
-  .linha-texto{display:flex;flex-direction:column;justify-content:center}
-  .linha-img{min-height:380px}
+  .bento,.bento.fatos{grid-template-columns:repeat(12,1fr)}
+  .grande{grid-column:span 6;grid-row:span 2}
+  .s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s7{grid-column:span 7}
+  .minis{grid-template-columns:repeat(4,1fr)}
+  .app.larga{flex-direction:row;gap:28px;padding:40px 0 0 40px}
+  .app.larga .app-texto{flex:1;min-width:0;padding-bottom:36px;margin-bottom:0}
+  .app.larga .tela{align-self:flex-end;width:min(250px,42%);margin:0 40px 0 0}
+  .app.larga .tela img{aspect-ratio:520/720}
 }
 @media(hover:hover) and (pointer:fine){
   .topo nav a:hover,.tema:hover{color:var(--texto)}
   .bt:hover{background-color:color-mix(in srgb,var(--tinta) 82%,var(--bg))}
-  .bt-claro:hover{background-color:color-mix(in srgb,var(--no-painel) 85%,var(--painel))}
   .lnk:hover{text-decoration:underline}.lnk:hover svg{transform:translateX(2px)}
-  .seta:hover{border-color:var(--texto2)}
-  .aba:hover{color:var(--texto)}
 }
 @media(prefers-reduced-transparency:reduce){.topo{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media(prefers-contrast:more){
+  .cx,.vitrine{box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--texto) 45%,transparent)}
+  .lead,.t,.cab p,.fecho p,.app-topo p,footer{color:var(--texto)}
+}
 
-/* Movimento */
+/* Movimento. Entrada do hero: uma vez por visita, o título lidera e o resto vem atrás com passos que encolhem. */
 @media(prefers-reduced-motion:no-preference){
   .eyebrow{animation:aparece .5s ease both}
   h1{animation:materializa .9s var(--ease-out) .06s both}
   .lead{animation:sobe .8s var(--ease-out) .18s both;--y:12px}
   .hero .acoes{animation:sobe .8s var(--ease-out) .26s both;--y:10px}
-  .vitrine{animation:sobe 1s var(--ease-out) .3s both;--y:40px}
-  .tela-grande{animation:sobe 1.1s var(--ease-out) .4s both;--y:60px}
+  .vitrine{animation:aparece .9s ease .2s both}
+  .palco .tela{animation:sobe 1.1s var(--ease-out) var(--atraso) both}
+  .t0{--atraso:.3s;--y:90px}.t1.e{--atraso:.38s;--y:110px}.t1.d{--atraso:.41s;--y:110px}.t2.e{--atraso:.46s;--y:130px}.t2.d{--atraso:.48s;--y:130px}
+
+  /* Revelação única de cada bloco ao entrar na tela; o JS dá o atraso de cada um na onda. */
   .anima .rv{transition:opacity .7s var(--ease-out) var(--d,0ms),transform .8s var(--ease-out) var(--d,0ms),filter .8s var(--ease-out) var(--d,0ms)}
   .anima .rv:not(.rv-on){opacity:0;transform:translateY(var(--rv-y,28px))}
   .anima h2.rv:not(.rv-on){--rv-y:20px;filter:blur(6px)}
-  .anima .fatos .rv:not(.rv-on){--rv-y:16px}
-  .anima .fatos .rv-on .ic-roda svg>*{animation:traco .9s var(--ease-in-out) calc(var(--d,0ms) + 200ms) both}
-  .anima .cartao{transition:transform .3s var(--ease-out)}
+  .anima p.rv:not(.rv-on),.anima .acoes.rv:not(.rv-on){--rv-y:12px}
+  .anima .mini.rv:not(.rv-on){--rv-y:18px}
+
+  /* O traço dos ícones dos fatos se desenha quando o bloco pousa. */
+  .anima .fato .ic>*{stroke-dasharray:1;stroke-dashoffset:1}
+  .anima .fato.rv-on .ic>*{stroke-dashoffset:0;transition:stroke-dashoffset .9s var(--ease-in-out) calc(var(--d,0ms) + 220ms)}
+  .anima .fato.rv-on .ic>:nth-child(2){transition-delay:calc(var(--d,0ms) + 280ms)}
+  .anima .fato.rv-on .ic>:nth-child(n+3){transition-delay:calc(var(--d,0ms) + 320ms)}
+
+  /* Grade de ícones do fecho: onda diagonal. */
+  .anima .icones img{transition:opacity .6s var(--ease-out) var(--d,0ms),transform .7s var(--ease-out) var(--d,0ms)}
+  .anima .icones:not(.rv-on) img{opacity:0;transform:translateY(14px) scale(.92)}
+
+  /* Atrelado à rolagem, onde o navegador suporta: as telas sobem de dentro dos blocos e o hero ganha profundidade. */
   @supports (animation-timeline:view()){
-    .linha-img .tela{animation:tela-sobe linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+    .app .tela{animation:tela-sobe linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+    .palco .tela{animation:sobe 1.1s var(--ease-out) var(--atraso) both,var(--leque) linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 900px}
+    .t0{--leque:leque-0}.t1.e{--leque:leque-1e}.t1.d{--leque:leque-1d}.t2.e{--leque:leque-2e}.t2.d{--leque:leque-2d}
+    .grade{animation:grade-recua linear both;animation-timeline:scroll(root);animation-range:0 900px}
   }
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tela-grande img{filter:none;transform:none;transition:opacity .15s ease}.vitrine{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero .w{animation:aparece .3s ease both}}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.3s;animation-timing-function:ease}
 @keyframes sobe{from{opacity:0;transform:translateY(var(--y,16px))}}
 @keyframes materializa{from{opacity:0;transform:translateY(18px);filter:blur(8px)}}
 @keyframes aparece{from{opacity:0}}
-@keyframes tela-sobe{from{translate:0 56px}}
-@keyframes traco{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
-@media print{.rv{opacity:1!important;transform:none!important;filter:none!important}}
+@keyframes tela-sobe{from{translate:0 64px}}
+@keyframes leque-0{to{translate:0 -16px}}
+@keyframes leque-1e{to{translate:-10px -30px}}
+@keyframes leque-1d{to{translate:10px -30px}}
+@keyframes leque-2e{to{translate:-22px -46px}}
+@keyframes leque-2d{to{translate:22px -46px}}
+@keyframes grade-recua{to{translate:0 -30px}}
+@media print{.rv,.icones img{opacity:1!important;transform:none!important;filter:none!important}}
 </style>
   </head>
   <body>
@@ -217,89 +250,103 @@ footer .marca{color:var(--texto);font-size:.95rem}
     <main id="conteudo">
       <section class="hero" aria-labelledby="titulo"><div class="w">
         <p class="eyebrow"><svg viewBox="0 0 773.3 59.4" aria-hidden="true"><rect x="12.1" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="24.2" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="36.3" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="0" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="48.4" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="0" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="24.2" y="24.2" width="11" height="11" rx="1.32" fill="#FF6A1F"/><rect x="48.4" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="0" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="36.3" y="36.3" width="11" height="11" rx="1.32" fill="#FF6A1F"/><rect x="12.1" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="24.2" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="48.4" y="48.4" width="11" height="11" rx="1.32" fill="#FF6A1F"/><rect x="72.6" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="121" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="72.6" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="121" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="72.6" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="121" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="72.6" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="121" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="84.7" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="96.8" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="108.9" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="145.2" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="157.3" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="169.4" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="157.3" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="157.3" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="157.3" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="145.2" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="157.3" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="169.4" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="193.6" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="242" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="193.6" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="205.7" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="242" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="193.6" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="217.8" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="242" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="193.6" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="229.9" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="242" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="193.6" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="242" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="266.2" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="278.3" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="290.4" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="302.5" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="314.6" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="290.4" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="290.4" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="290.4" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="290.4" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="350.9" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="363" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="375.1" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="338.8" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="387.2" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="338.8" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="350.9" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="363" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="375.1" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="387.2" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="338.8" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="387.2" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="338.8" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="387.2" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="411.4" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="411.4" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="411.4" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="411.4" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="411.4" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="423.5" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="435.6" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="447.7" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="508.2" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="520.3" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="532.4" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="496.1" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="544.5" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="496.1" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="508.2" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="520.3" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="532.4" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="544.5" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="496.1" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="544.5" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="496.1" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="544.5" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="568.7" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="580.8" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="592.9" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="605" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="568.7" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="617.1" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="568.7" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="580.8" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="592.9" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="605" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="568.7" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="568.7" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="641.3" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="653.4" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="665.5" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="677.6" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="641.3" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="689.7" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="641.3" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="653.4" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="665.5" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="677.6" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="641.3" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="641.3" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="726" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="738.1" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="750.2" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="762.3" y="0" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="713.9" y="12.1" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="726" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="738.1" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="750.2" y="24.2" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="762.3" y="36.3" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="713.9" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="726" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="738.1" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/><rect x="750.2" y="48.4" width="11" height="11" rx="1.32" fill="currentColor"/></svg><span class="sr">Quintal Apps</span></p>
-        <h1 id="titulo">Abriu, <em>resolveu.</em></h1>
-        <p class="lead">Calculadoras e quizzes em português que fazem uma coisa só, e fazem bem. Sem internet, sem cadastro.</p>
+        <h1 id="titulo">Abriu, resolveu.</h1>
+        <p class="lead">Calculadoras e quizzes em português que fazem uma coisa só, e fazem bem.</p>
         <div class="acoes"><a class="bt" href="#calculadoras">Conhecer os apps</a><a class="lnk" href="#quizzes">Ver os quizzes<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></div>
-
-        <div class="vitrine" style="--c:#c2411b">
-          <div class="palco" id="painel-vitrine" role="tabpanel" aria-labelledby="aba-0">
-            <button class="seta ant" type="button" aria-label="App anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-            <div class="tela-grande"><img class="on" src="assets/telas/brasa-lista.webp" alt="Brasa Certa: Churrasco sem faltar nem sobrar." width="520" height="943" fetchpriority="high" decoding="async" data-c="#c2411b" data-app="Brasa Certa" data-rot="Cozinha e casa" data-frase="Churrasco sem faltar nem sobrar." /><img class="" src="assets/telas/medidinha.webp" alt="Medidinha: Xícara virou grama." width="520" height="943" loading="lazy" decoding="async" data-c="#1f7a6b" data-app="Medidinha" data-rot="Cozinha e casa" data-frase="Xícara virou grama." /><img class="" src="assets/telas/contadia.webp" alt="Contadia: O dia certo, sem erro de conta." width="520" height="943" loading="lazy" decoding="async" data-c="#6760c3" data-app="Contadia" data-rot="Datas e prazos" data-frase="O dia certo, sem erro de conta." /><img class="" src="assets/telas/rota.webp" alt="Rota Brasil: Quanto você conhece do Brasil?" width="520" height="1156" loading="lazy" decoding="async" data-c="#2e7d4f" data-app="Rota Brasil" data-rot="Quiz" data-frase="Quanto você conhece do Brasil?" /><img class="" src="assets/telas/vo.webp" alt="Já Dizia a Vó: Você sabe o final?" width="520" height="1156" loading="lazy" decoding="async" data-c="#a0547a" data-app="Já Dizia a Vó" data-rot="Quiz" data-frase="Você sabe o final?" /></div>
-            <button class="seta prox" type="button" aria-label="Próximo app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="vitrine" aria-hidden="true">
+          <div class="grade"></div>
+          <div class="palco">
+            <div class="tela t2 e"><img src="assets/telas/palavra.webp" alt="" width="520" height="1156" loading="lazy" decoding="async" /></div>
+            <div class="tela t1 e" style="--tela-fundo:#15110d"><img src="assets/telas/contadia-escuro.webp" alt="" width="520" height="943" decoding="async" /></div>
+            <div class="tela t0"><img src="assets/telas/brasa-lista.webp" alt="" width="520" height="943" decoding="async" fetchpriority="high" /></div>
+            <div class="tela t1 d"><img src="assets/telas/rota.webp" alt="" width="520" height="1156" decoding="async" /></div>
+            <div class="tela t2 d"><img src="assets/telas/vo.webp" alt="" width="520" height="1156" loading="lazy" decoding="async" /></div>
           </div>
-          <p class="legenda" aria-live="polite"><span class="leg-app">Brasa Certa</span> <span class="leg-frase">Churrasco sem faltar nem sobrar.</span></p>
-          <div class="abas" role="tablist" aria-label="Escolha um app para ver a tela"><button class="aba" type="button" role="tab" id="aba-0" aria-selected="true" aria-controls="painel-vitrine" tabindex="0" data-i="0" style="--c:#c2411b"><img src="assets/icones/brasa-certa.png" alt="" width="40" height="40" /><span>Brasa Certa</span></button><button class="aba" type="button" role="tab" id="aba-1" aria-selected="false" aria-controls="painel-vitrine" tabindex="-1" data-i="1" style="--c:#1f7a6b"><img src="assets/icones/medidinha.png" alt="" width="40" height="40" /><span>Medidinha</span></button><button class="aba" type="button" role="tab" id="aba-2" aria-selected="false" aria-controls="painel-vitrine" tabindex="-1" data-i="2" style="--c:#6760c3"><img src="assets/icones/contadia.png" alt="" width="40" height="40" /><span>Contadia</span></button><button class="aba" type="button" role="tab" id="aba-3" aria-selected="false" aria-controls="painel-vitrine" tabindex="-1" data-i="3" style="--c:#2e7d4f"><img src="assets/icones/rota-brasil.png" alt="" width="40" height="40" /><span>Rota Brasil</span></button><button class="aba" type="button" role="tab" id="aba-4" aria-selected="false" aria-controls="painel-vitrine" tabindex="-1" data-i="4" style="--c:#a0547a"><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="40" height="40" /><span>Já Dizia a Vó</span></button></div>
         </div>
       </div></section>
 
-      <section class="bl fatos-sec" aria-labelledby="t-jeito"><div class="w">
-        <h2 class="rv" id="t-jeito">Nada de app gigante.<br /><span>Só o que resolve.</span></h2>
-        <ul class="fatos"><li class="rv"><span class="ic-roda"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3 3l18 18"/><path pathLength="1" d="M8.5 15.5a5 5 0 017 0M5 12a10 10 0 013-2M13 8.6a10 10 0 016 3.4"/><path pathLength="1" d="M12 19h.01"/></svg></span><h3>Sem internet</h3><p>Calcula e joga offline, no ônibus ou no sítio.</p></li><li class="rv"><span class="ic-roda"><svg viewBox="0 0 24 24" aria-hidden="true"><circle pathLength="1" cx="12" cy="8" r="3.5"/><path pathLength="1" d="M5 20c.6-4 3.5-6 7-6s6.4 2 7 6"/></svg></span><h3>Sem cadastro</h3><p>Nada de conta, e-mail ou senha. Abriu, usou.</p></li><li class="rv"><span class="ic-roda"><svg viewBox="0 0 24 24" aria-hidden="true"><rect pathLength="1" x="7" y="3" width="10" height="18" rx="2.5"/><path pathLength="1" d="M11 18h2"/></svg></span><h3>Fica no aparelho</h3><p>O que você salva não sai do seu celular.</p></li><li class="rv"><span class="ic-roda"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 9h16v11H4zM3 6.5h18V9H3z"/><path pathLength="1" d="M12 6.5V20"/><path pathLength="1" d="M12 6.5C9 6.5 8 3.5 10 3s2 3.5 2 3.5 0-4 2-3.5 1 3.5-2 3.5z"/></svg></span><h3>Gratuitos</h3><p>Com anúncios discretos, sem atrapalhar o uso.</p></li><li class="rv"><span class="ic-roda"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 5h16v11H9l-5 4z"/><path pathLength="1" d="M8 9.5h8M8 12.5h5"/></svg></span><h3>Em português</h3><p>Feitos no Brasil, com medidas, feriados e assuntos daqui.</p></li><li class="rv"><span class="ic-roda"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 4h10l4 4v12H5z"/><path pathLength="1" d="M15 4v4h4"/><path pathLength="1" d="M8 12h8M8 15.5h6"/></svg></span><h3>Com a fonte</h3><p>Cada resposta dos quizzes explica o porquê e de onde veio.</p></li></ul>
+      <section class="bl" aria-labelledby="t-jeito"><div class="w">
+        <div class="cab"><h2 class="rv" id="t-jeito">Pequenos de propósito.</h2><p class="rv">Todos os apps seguem as mesmas regras, do primeiro ao décimo quarto.</p></div>
+        <div class="bento fatos">
+          <div class="cx grande rv"><p class="n num" aria-hidden="true" data-ate="14">14</p><h3><span class="sr">14 </span>apps feitos no Brasil, para Android.</h3><p class="t">Quatro calculadoras e dez quizzes, todos em português.</p></div>
+          <div class="cx fato s3 rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3 3l18 18"/><path pathLength="1" d="M8.5 15.5a5 5 0 017 0M5 12a10 10 0 013-2M13 8.6a10 10 0 016 3.4"/><path pathLength="1" d="M12 19h.01"/></svg><h3>Sem internet.</h3><p class="t">Calcula e joga offline.</p></div>
+          <div class="cx fato s3 rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle pathLength="1" cx="12" cy="8" r="3.5"/><path pathLength="1" d="M5 20c.6-4 3.5-6 7-6s6.4 2 7 6"/></svg><h3>Sem cadastro.</h3><p class="t">Abriu, usou.</p></div>
+          <div class="cx fato s3 rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect pathLength="1" x="7" y="3" width="10" height="18" rx="2.5"/><path pathLength="1" d="M11 18h2"/></svg><h3>Fica no aparelho.</h3><p class="t">O que você salva é só seu.</p></div>
+          <div class="cx fato s3 rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M4 9h16v11H4zM3 6.5h18V9H3z"/><path pathLength="1" d="M12 6.5V20"/><path pathLength="1" d="M12 6.5C9 6.5 8 3.5 10 3s2 3.5 2 3.5 0-4 2-3.5 1 3.5-2 3.5z"/></svg><h3>Gratuitos.</h3><p class="t">Com anúncios discretos.</p></div>
+        </div>
       </div></section>
 
       <section class="bl" id="calculadoras" aria-labelledby="t-calc"><div class="w">
-        <div class="cab"><p class="sobre rv">Calculadoras</p><h2 class="rv" id="t-calc">A conta certa, na hora certa.</h2><p class="sub rv">Da compra do churrasco ao galão de tinta. Telas reais, com dados de exemplo.</p></div>
-        <div class="linhas">
-          <article class="linha rv" id="cozinha" style="--c:#c2411b">
-            <div class="linha-img"><div class="tela"><img src="assets/telas/brasa-form.webp" alt="Tela Novo churrasco do Brasa Certa" width="520" height="943" loading="lazy" decoding="async" /></div></div>
-            <div class="linha-texto"><div class="app-topo"><img src="assets/icones/brasa-certa.png" alt="" width="44" height="44" loading="lazy" /><h3>Brasa Certa</h3></div>
-              <p class="frase">Churrasco sem faltar nem sobrar.</p><p class="t">Diga quantas pessoas vão e receba a lista de compras, com quantidades e custo por pessoa.</p><ul class="lista"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Carnes, bebidas, carvão e gelo</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Preços que você ajusta</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lista pronta para compartilhar</li></ul>
+        <div class="cab"><h2 class="rv" id="t-calc">A conta certa, na hora certa.</h2><p class="rv">Da compra do churrasco ao galão de tinta. Telas reais, com dados de exemplo.</p></div>
+        <div class="bento">
+          <article class="cx tinta app larga s7 rv" id="cozinha" style="--c:#c2411b">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/brasa-certa.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Brasa Certa</h3><p>Cozinha e casa</p></div></div>
+              <p class="frase">Churrasco sem faltar nem sobrar.</p><p class="t">Diga quantas pessoas vão e receba a lista de compras, com quantidades e custo por pessoa.</p>
+              <ul class="lista"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Carnes, bebidas, carvão e gelo</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Preços que você ajusta</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lista pronta para compartilhar</li></ul>
               <a class="priv" href="privacidade/#brasa-certa" aria-label="Política de privacidade do Brasa Certa">Privacidade</a></div>
-          </article><article class="linha rv" id="medidas" style="--c:#1f7a6b">
-            <div class="linha-img"><div class="tela"><img src="assets/telas/medidinha.webp" alt="Conversor da Medidinha: 2 xícaras de farinha são cerca de 254 g" width="520" height="943" loading="lazy" decoding="async" /></div></div>
-            <div class="linha-texto"><div class="app-topo"><img src="assets/icones/medidinha.png" alt="" width="44" height="44" loading="lazy" /><h3>Medidinha</h3></div>
+            <div class="tela"><img src="assets/telas/brasa-form.webp" alt="Tela Novo churrasco do Brasa Certa" width="520" height="943" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="cx tinta app s5 rv" id="medidas" style="--c:#1f7a6b">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/medidinha.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Medidinha</h3><p>Cozinha e casa</p></div></div>
               <p class="frase">Xícara virou grama.</p><p class="t">Converte medidas de cozinha por ingrediente e ajusta a receita para mais ou menos porções.</p>
               <a class="priv" href="privacidade/#medidinha" aria-label="Política de privacidade do Medidinha">Privacidade</a></div>
-          </article><article class="linha rv" id="datas" style="--c:#6760c3">
-            <div class="linha-img"><div class="tela"><img src="assets/telas/contadia.webp" alt="Resultado do Contadia: 285 dias entre duas datas" width="520" height="943" loading="lazy" decoding="async" /></div></div>
-            <div class="linha-texto"><div class="app-topo"><img src="assets/icones/contadia.png" alt="" width="44" height="44" loading="lazy" /><h3>Contadia</h3></div>
+            <div class="tela"><img src="assets/telas/medidinha.webp" alt="Conversor da Medidinha: 2 xícaras de farinha são cerca de 254 g" width="520" height="943" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="cx tinta app s5 rv" id="datas" style="--c:#6760c3">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/contadia.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Contadia</h3><p>Datas e prazos</p></div></div>
               <p class="frase">O dia certo, sem erro de conta.</p><p class="t">Dias entre datas, idade exata, dias úteis com feriados e contagem regressiva.</p>
               <a class="priv" href="privacidade/#contadia" aria-label="Política de privacidade do Contadia">Privacidade</a></div>
-          </article><article class="linha rv" id="obra" style="--c:#946300">
-            <div class="linha-img"><div class="tela"><img src="assets/telas/obra.webp" alt="Resultado do Obra Exata: 6,2 litros de tinta para a sala" width="520" height="943" loading="lazy" decoding="async" /></div></div>
-            <div class="linha-texto"><div class="app-topo"><img src="assets/icones/obra-exata.png" alt="" width="44" height="44" loading="lazy" /><h3>Obra Exata</h3></div>
-              <p class="frase">A compra certa para a obra.</p><p class="t">Tinta, piso e outros materiais por cômodo, já arredondados para as embalagens da loja.</p><ul class="lista"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cálculo por cômodo ou avulso</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Perda incluída na conta</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lista da obra em um só lugar</li></ul>
+            <div class="tela"><img src="assets/telas/contadia.webp" alt="Resultado do Contadia: 285 dias entre duas datas" width="520" height="943" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="cx tinta app larga s7 rv" id="obra" style="--c:#946300">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/obra-exata.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Obra Exata</h3><p>Obra e reforma</p></div></div>
+              <p class="frase">A compra certa para a obra.</p><p class="t">Tinta, piso e outros materiais por cômodo, já arredondados para as embalagens da loja.</p>
+              <ul class="lista"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cálculo por cômodo ou avulso</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Perda incluída na conta</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lista da obra em um só lugar</li></ul>
               <a class="priv" href="privacidade/#obra-exata" aria-label="Política de privacidade do Obra Exata">Privacidade</a></div>
+            <div class="tela"><img src="assets/telas/obra.webp" alt="Resultado do Obra Exata: 6,2 litros de tinta para a sala" width="520" height="943" loading="lazy" decoding="async" /></div>
           </article>
         </div>
       </div></section>
 
-      <section class="bl quiz-sec" id="quizzes" aria-labelledby="t-quiz"><div class="w">
-        <div class="cab cab-linha"><div><p class="sobre rv">Quizzes</p><h2 class="rv" id="t-quiz">Dez quizzes, uma boa história em cada resposta.</h2></div>
-          <div class="setas-trilho"><button class="seta" type="button" data-dir="-1" aria-label="Quizzes anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button class="seta" type="button" data-dir="1" aria-label="Mais quizzes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
-      </div>
-        <ul class="trilho" aria-label="Os dez quizzes">
-            <li class="cartao" style="--c:#3a6ea5"><img src="assets/icones/quiz-da-palavra.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Quiz da Palavra</h3><p class="f">Quanto você sabe da Palavra?</p><p class="t">Por testamento, por livro ou por personagem, com a referência em cada resposta.</p>
-              <a class="priv" href="privacidade/#quiz-da-palavra" aria-label="Política de privacidade do Quiz da Palavra">Privacidade</a></li><li class="cartao" style="--c:#2e7d4f"><img src="assets/icones/rota-brasil.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Rota Brasil</h3><p class="f">Quanto você conhece do Brasil?</p><p class="t">Estados, capitais, rios, biomas e regiões, com a fonte de cada resposta.</p>
-              <a class="priv" href="privacidade/#rota-brasil" aria-label="Política de privacidade do Rota Brasil">Privacidade</a></li><li class="cartao" style="--c:#a0547a"><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Já Dizia a Vó</h3><p class="f">Você sabe o final?</p><p class="t">Complete o ditado, descubra o sentido e conheça a história por trás dele.</p>
-              <a class="priv" href="privacidade/#ja-dizia-a-vo" aria-label="Política de privacidade do Já Dizia a Vó">Privacidade</a></li><li class="cartao" style="--c:#C2185B"><img src="assets/icones/pega-o-erro.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Pega o Erro</h3><p class="f">Ache o erro de português.</p><p class="t">Toque na palavra errada de cada frase e veja a regra por trás do erro, com a fonte.</p>
-              <a class="priv" href="privacidade/#pega-o-erro" aria-label="Política de privacidade do Pega o Erro">Privacidade</a></li><li class="cartao" style="--c:#00758F"><img src="assets/icones/qual-e-a-bandeira.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Qual é a Bandeira?</h3><p class="f">Quantas bandeiras você conhece?</p><p class="t">Da bandeira para o país, do país para a bandeira, por continente ou até o terceiro erro.</p>
-              <a class="priv" href="privacidade/#qual-e-a-bandeira" aria-label="Política de privacidade do Qual é a Bandeira?">Privacidade</a></li><li class="cartao" style="--c:#5F7A1F"><img src="assets/icones/fauna-do-brasil.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Fauna do Brasil</h3><p class="f">Que animal é este?</p><p class="t">Peça as pistas uma de cada vez: quanto menos você pedir, mais pontos ganha.</p>
-              <a class="priv" href="privacidade/#fauna-do-brasil" aria-label="Política de privacidade do Fauna do Brasil">Privacidade</a></li><li class="cartao" style="--c:#7A4E2D"><img src="assets/icones/brasil-no-tempo.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Brasil no Tempo</h3><p class="f">Qual veio primeiro?</p><p class="t">Ponha quatro fatos da história do Brasil em ordem, com a data e a fonte de cada um.</p>
-              <a class="priv" href="privacidade/#brasil-no-tempo" aria-label="Política de privacidade do Brasil no Tempo">Privacidade</a></li><li class="cartao" style="--c:#9E2A2B"><img src="assets/icones/culinaria-do-brasil.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Culinária do Brasil</h3><p class="f">De onde é este prato?</p><p class="t">Ligue cada prato à região do Brasil ou ao ingrediente principal, com a frase e a fonte de cada par.</p>
-              <a class="priv" href="privacidade/#culinaria-do-brasil" aria-label="Política de privacidade do Culinária do Brasil">Privacidade</a></li><li class="cartao" style="--c:#5B2A86"><img src="assets/icones/mito-ou-verdade.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Mito ou Verdade</h3><p class="f">Mito ou verdade?</p><p class="t">Diga e descubra por quê: cada frase de ciência traz a explicação e as fontes. O selo Tenho certeza vale o dobro se você acertar.</p>
-              <a class="priv" href="privacidade/#mito-ou-verdade" aria-label="Política de privacidade do Mito ou Verdade">Privacidade</a></li><li class="cartao" style="--c:#30671E"><img src="assets/icones/bola-na-memoria.png" alt="" width="72" height="72" loading="lazy" />
-              <h3>Bola na Memória</h3><p class="f">Onde ficou o par?</p><p class="t">Vire as cartas e ache cada fato do futebol com o seu ano, lugar ou número. Jogo independente, sem ligação oficial.</p>
-              <a class="priv" href="privacidade/#bola-na-memoria" aria-label="Política de privacidade do Bola na Memória">Privacidade</a></li>
-        </ul>
-      </section>
+      <section class="bl" id="quizzes" aria-labelledby="t-quiz"><div class="w">
+        <div class="cab"><h2 class="rv" id="t-quiz">Rodadas curtas e uma boa história para contar.</h2><p class="rv">Ajudas opcionais e uma explicação, com a fonte, em cada resposta.</p></div>
+        <div class="bento">
+          <article class="cx tinta app s4 rv" style="--c:#3a6ea5">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/quiz-da-palavra.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Quiz da Palavra</h3><p>Quiz</p></div></div>
+              <p class="frase">Quanto você sabe da Palavra?</p><p class="t">Por testamento, por livro ou por personagem, com a referência em cada resposta.</p>
+              <a class="priv" href="privacidade/#quiz-da-palavra" aria-label="Política de privacidade do Quiz da Palavra">Privacidade</a></div>
+            <div class="tela"><img src="assets/telas/palavra.webp" alt="Resposta certa no Quiz da Palavra, com a referência bíblica" width="520" height="1156" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="cx tinta app s4 rv" style="--c:#2e7d4f">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/rota-brasil.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Rota Brasil</h3><p>Quiz</p></div></div>
+              <p class="frase">Quanto você conhece do Brasil?</p><p class="t">Estados, capitais, rios, biomas e regiões, com a fonte de cada resposta.</p>
+              <a class="priv" href="privacidade/#rota-brasil" aria-label="Política de privacidade do Rota Brasil">Privacidade</a></div>
+            <div class="tela"><img src="assets/telas/rota.webp" alt="Resposta certa no Rota Brasil: a capital do Paraná é Curitiba" width="520" height="1156" loading="lazy" decoding="async" /></div>
+          </article>
+          <article class="cx tinta app s4 rv" style="--c:#a0547a">
+            <div class="app-texto"><div class="app-topo"><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="40" height="40" loading="lazy" /><div><h3>Já Dizia a Vó</h3><p>Quiz</p></div></div>
+              <p class="frase">Você sabe o final?</p><p class="t">Complete o ditado, descubra o sentido e conheça a história por trás dele.</p>
+              <a class="priv" href="privacidade/#ja-dizia-a-vo" aria-label="Política de privacidade do Já Dizia a Vó">Privacidade</a></div>
+            <div class="tela"><img src="assets/telas/vo.webp" alt="Ditado completado no Já Dizia a Vó, com curiosidade e fonte" width="520" height="1156" loading="lazy" decoding="async" /></div>
+          </article>
+        </div>
+        <div class="minis">
+          <article class="cx mini rv"><img src="assets/icones/pega-o-erro.png" alt="" width="48" height="48" loading="lazy" /><h3>Pega o Erro</h3><p class="f">Ache o erro de português.</p><p class="t">Toque na palavra errada de cada frase e veja a regra por trás do erro, com a fonte.</p><a class="priv" href="privacidade/#pega-o-erro" aria-label="Política de privacidade do Pega o Erro">Privacidade</a></article>
+          <article class="cx mini rv"><img src="assets/icones/qual-e-a-bandeira.png" alt="" width="48" height="48" loading="lazy" /><h3>Qual é a Bandeira?</h3><p class="f">Quantas bandeiras você conhece?</p><p class="t">Da bandeira para o país, do país para a bandeira, por continente ou até o terceiro erro.</p><a class="priv" href="privacidade/#qual-e-a-bandeira" aria-label="Política de privacidade do Qual é a Bandeira?">Privacidade</a></article>
+          <article class="cx mini rv"><img src="assets/icones/fauna-do-brasil.png" alt="" width="48" height="48" loading="lazy" /><h3>Fauna do Brasil</h3><p class="f">Que animal é este?</p><p class="t">Peça as pistas uma de cada vez: quanto menos você pedir, mais pontos ganha.</p><a class="priv" href="privacidade/#fauna-do-brasil" aria-label="Política de privacidade do Fauna do Brasil">Privacidade</a></article>
+          <article class="cx mini rv"><img src="assets/icones/brasil-no-tempo.png" alt="" width="48" height="48" loading="lazy" /><h3>Brasil no Tempo</h3><p class="f">Qual veio primeiro?</p><p class="t">Ponha quatro fatos da história do Brasil em ordem, com a data e a fonte de cada um.</p><a class="priv" href="privacidade/#brasil-no-tempo" aria-label="Política de privacidade do Brasil no Tempo">Privacidade</a></article>
+          <article class="cx mini rv"><img src="assets/icones/culinaria-do-brasil.png" alt="" width="48" height="48" loading="lazy" /><h3>Culinária do Brasil</h3><p class="f">De onde é este prato?</p><p class="t">Ligue cada prato à região do Brasil ou ao ingrediente principal, com a frase e a fonte de cada par.</p><a class="priv" href="privacidade/#culinaria-do-brasil" aria-label="Política de privacidade do Culinária do Brasil">Privacidade</a></article>
+          <article class="cx mini rv"><img src="assets/icones/mito-ou-verdade.png" alt="" width="48" height="48" loading="lazy" /><h3>Mito ou Verdade</h3><p class="f">Mito ou verdade?</p><p class="t">Diga e descubra por quê: cada frase de ciência traz a explicação e as fontes. O selo Tenho certeza vale o dobro se você acertar.</p><a class="priv" href="privacidade/#mito-ou-verdade" aria-label="Política de privacidade do Mito ou Verdade">Privacidade</a></article>
+          <article class="cx mini rv"><img src="assets/icones/bola-na-memoria.png" alt="" width="48" height="48" loading="lazy" /><h3>Bola na Memória</h3><p class="f">Onde ficou o par?</p><p class="t">Vire as cartas e ache cada fato do futebol com o seu ano, lugar ou número. Jogo independente, sem ligação oficial.</p><a class="priv" href="privacidade/#bola-na-memoria" aria-label="Política de privacidade do Bola na Memória">Privacidade</a></article>
+          <div class="cx selo-fim rv"><strong class="num">10 quizzes</strong><span>Em português e sem internet.</span></div>
+        </div>
+      </div></section>
 
       <section class="bl fecho" aria-labelledby="t-fim"><div class="w">
-        <div class="painel-fim rv">
-          <div class="icones" aria-hidden="true"><img src="assets/icones/brasa-certa.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/medidinha.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/contadia.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/obra-exata.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/quiz-da-palavra.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/rota-brasil.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/pega-o-erro.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/qual-e-a-bandeira.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/fauna-do-brasil.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/brasil-no-tempo.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/culinaria-do-brasil.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/mito-ou-verdade.png" alt="" width="56" height="56" loading="lazy" /><img src="assets/icones/bola-na-memoria.png" alt="" width="56" height="56" loading="lazy" /></div>
-          <h2 id="t-fim">Catorze apps.<br />Um jeito só de fazer.</h2>
-          <p>Pequenos no tamanho, feitos no Brasil, para Android.</p>
-          <div class="acoes"><a class="bt bt-claro" href="mailto:quintalapps@gmail.com">Fale com a gente</a></div>
-        </div>
+        <div class="icones" aria-hidden="true"><img src="assets/icones/brasa-certa.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/medidinha.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/contadia.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/obra-exata.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/quiz-da-palavra.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/rota-brasil.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/ja-dizia-a-vo.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/pega-o-erro.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/qual-e-a-bandeira.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/fauna-do-brasil.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/brasil-no-tempo.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/culinaria-do-brasil.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/mito-ou-verdade.png" alt="" width="64" height="64" loading="lazy" /><img src="assets/icones/bola-na-memoria.png" alt="" width="64" height="64" loading="lazy" /></div>
+        <h2 class="rv" id="t-fim">Pequenos no tamanho.<br />Grandes no dia a dia.</h2>
+        <p class="rv">Catorze apps feitos no Brasil, para Android.</p>
+        <div class="acoes rv"><a class="bt" href="mailto:quintalapps@gmail.com">Fale com a gente</a></div>
       </div></section>
     </main>
     <footer><div class="w">
@@ -311,9 +358,8 @@ footer .marca{color:var(--texto);font-size:.95rem}
       (function () {
         var r = document.documentElement;
         var barras = document.querySelectorAll('meta[name="theme-color"]');
-        var reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Tema (mesma chave das páginas de texto), trocado em crossfade.
+        // Tema: mesma chave das páginas de texto. A troca é um crossfade, para o brilho não mudar de uma vez.
         document.querySelector('.tema').addEventListener('click', function () {
           var escuro = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
           function troca() {
@@ -324,55 +370,18 @@ footer .marca{color:var(--texto);font-size:.95rem}
           if (document.startViewTransition) document.startViewTransition(troca); else troca();
         });
 
-        // Vitrine: abas com os ícones dos apps, setas e teclado (← →, Home, End). Sem troca automática.
-        var vitrine = document.querySelector('.vitrine');
-        var abas = [].slice.call(vitrine.querySelectorAll('.aba'));
-        var telas = [].slice.call(vitrine.querySelectorAll('.tela-grande img'));
-        var painel = vitrine.querySelector('.palco');
-        var legApp = vitrine.querySelector('.leg-app'), legFrase = vitrine.querySelector('.leg-frase');
-        var atual = 0;
-        function mostra(i, foco) {
-          i = (i + abas.length) % abas.length;
-          if (i === atual) { if (foco) abas[i].focus(); return; }
-          atual = i;
-          abas.forEach(function (a, k) { a.setAttribute('aria-selected', k === i ? 'true' : 'false'); a.tabIndex = k === i ? 0 : -1; });
-          telas.forEach(function (t, k) { t.classList.toggle('on', k === i); });
-          var t = telas[i];
-          if (t.loading === 'lazy') t.loading = 'eager';
-          vitrine.style.setProperty('--c', t.dataset.c);
-          painel.setAttribute('aria-labelledby', abas[i].id);
-          legApp.textContent = t.dataset.app;
-          legFrase.textContent = t.dataset.frase;
-          if (foco) abas[i].focus();
-        }
-        abas.forEach(function (a, k) {
-          a.addEventListener('click', function () { mostra(k); });
-          a.addEventListener('keydown', function (e) {
-            var mapa = { ArrowRight: atual + 1, ArrowLeft: atual - 1, Home: 0, End: abas.length - 1 };
-            if (e.key in mapa) { e.preventDefault(); mostra(mapa[e.key], true); }
-          });
-        });
-        vitrine.querySelector('.seta.ant').addEventListener('click', function () { mostra(atual - 1); });
-        vitrine.querySelector('.seta.prox').addEventListener('click', function () { mostra(atual + 1); });
-        // Deixa as próximas telas prontas depois que a página carrega, para a troca não piscar.
-        addEventListener('load', function () { setTimeout(function () { telas.forEach(function (t) { t.loading = 'eager'; }); }, 800); });
-
-        // Trilho dos quizzes: as setas rolam um cartão por vez.
-        var trilho = document.querySelector('.trilho');
-        [].forEach.call(document.querySelectorAll('.setas-trilho .seta'), function (b) {
-          b.addEventListener('click', function () {
-            var passo = trilho.querySelector('.cartao').getBoundingClientRect().width + 16;
-            trilho.scrollBy({ left: passo * +b.dataset.dir, behavior: reduz ? 'auto' : 'smooth' });
-          });
-        });
-
         if (!('IntersectionObserver' in window)) return;
+
+        // Cabeçalho ganha vidro e linha só depois que a página sai do topo.
         var topo = document.querySelector('.topo');
-        new IntersectionObserver(function (e) { topo.classList.toggle('rolou', !e[0].isIntersecting); }).observe(document.querySelector('.sentinela'));
+        new IntersectionObserver(function (e) { topo.classList.toggle('rolou', !e[0].isIntersecting); })
+          .observe(document.querySelector('.sentinela'));
 
         if (!r.classList.contains('anima')) return;
         try {
-          // Revelação em onda, em ordem de leitura, com passos que encolhem (a fila continua entre chamadas).
+          // Quem entra junto entra em onda, em ordem de leitura, com passos que encolhem.
+          // A fila continua entre chamadas do observer (a rolagem suave entrega os blocos quadro a quadro)
+          // e recomeça do zero depois de uma pausa; nenhum bloco espera mais de 360ms.
           var passos = [80, 60, 50, 40, 30, 25, 20], fila = -1e9, k = 0;
           function agenda() {
             var agora = performance.now();
@@ -383,14 +392,49 @@ footer .marca{color:var(--texto);font-size:.95rem}
           var io = new IntersectionObserver(function (es) {
             es.forEach(function (e) {
               if (!e.isIntersecting) return;
-              e.target.style.setProperty('--d', agenda() + 'ms');
-              e.target.classList.add('rv-on');
-              io.unobserve(e.target);
+              var el = e.target;
+              var d = agenda();
+              el.style.setProperty('--d', d + 'ms');
+              el.classList.add('rv-on');
+              io.unobserve(el);
+              var n = el.querySelector('[data-ate]');
+              if (n) conta(n, d + 150);
             });
           }, { rootMargin: '0px 0px -8% 0px' });
-          [].forEach.call(document.querySelectorAll('.rv'), function (el) { io.observe(el); });
+          var rvs = document.querySelectorAll('.rv');
+          for (var i = 0; i < rvs.length; i++) io.observe(rvs[i]);
+
+          // Grade de ícones: onda diagonal com atrasos que encolhem (raiz quadrada da distância ao canto).
+          var grade = document.querySelector('.icones');
+          var icones = grade.querySelectorAll('img');
+          for (var j = 0; j < icones.length; j++) {
+            var t = (j % 7 + Math.floor(j / 7)) / 7;
+            icones[j].style.setProperty('--d', Math.round(440 * Math.sqrt(t)) + 'ms');
+          }
+          var io2 = new IntersectionObserver(function (es) {
+            if (!es[0].isIntersecting) return;
+            grade.classList.add('rv-on');
+            io2.disconnect();
+          }, { rootMargin: '0px 0px -8% 0px' });
+          io2.observe(grade);
+
+          var n14 = document.querySelector('[data-ate]');
+          if (n14) n14.textContent = '0';
         } catch (e) {
           r.classList.remove('anima');
+        }
+
+        // Contagem do "14": uma vez, com ease-out, em números de largura fixa.
+        function conta(el, atraso) {
+          var fim = +el.dataset.ate, ini = null;
+          setTimeout(function () {
+            requestAnimationFrame(function passo(agora) {
+              if (ini === null) ini = agora;
+              var p = Math.min(1, (agora - ini) / 1000);
+              el.textContent = Math.round(fim * (1 - Math.pow(1 - p, 3)));
+              if (p < 1) requestAnimationFrame(passo);
+            });
+          }, atraso);
         }
       })();
     </script>

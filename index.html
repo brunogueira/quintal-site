@@ -239,6 +239,9 @@ footer .marca{color:var(--texto);font-size:.95rem}
 
 /* Proposta 1 — Pixel vivo: o Q se monta peça por peça e as peças viram o fio da página */
 .vitrine .grade{opacity:.5}
+/* Sem caixa: o painel tem a cor da página e a grade some nas bordas, então nenhum monitor mostra um retângulo */
+.vitrine{background:var(--bg)}
+.vitrine::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(70% 80% at 50% 72%,transparent 35%,var(--bg) 92%)}
 .q-grande{display:block;width:clamp(92px,9vw,132px);height:auto;margin:0 auto 22px;stroke:none;overflow:visible}
 .q-grande .ti{fill:var(--texto)}.q-grande .lj{fill:var(--laranja)}.q-grande .ap{fill:var(--peca)}
 .px{display:flex;justify-content:center;gap:4px;margin-bottom:18px}
